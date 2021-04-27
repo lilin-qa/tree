@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="" />
+    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +75,14 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-396380092">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="tree" />
@@ -93,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="163">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -135,6 +146,7 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -202,8 +214,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="234" />
-    <option name="width" value="2360" />
+    <option name="x" value="12" />
+    <option name="y" value="4" />
+    <option name="width" value="2560" />
     <option name="height" value="1532" />
   </component>
   <component name="ProjectId" id="1eDInDMqHbKB3ovH6ZqVPZp1wI4" />
@@ -212,7 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -322,14 +334,11 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="tree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -348,9 +357,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619103186409" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619533528080" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSP" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python-demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -516,17 +525,18 @@
       <workItem from="1619191129396" duration="251000" />
       <workItem from="1619448556425" duration="1263000" />
       <workItem from="1619530311569" duration="23000" />
+      <workItem from="1619532960421" duration="538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94935000" />
+    <option name="totallyTimeSpent" value="95473000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="117" y="0" width="1180" height="766" extended-state="0" />
+    <frame x="6" y="2" width="1280" height="766" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1345811" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27168575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -536,7 +546,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85506076" weight="0.12598425" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.85506076" weight="0.116719246" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.11653543" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -546,15 +556,15 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.14493927" side_tool="true" weight="0.62772584" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.0" />
       <window_info anchor="bottom" id="Problems" order="11" sideWeight="0.4966722" weight="0.32913387" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.329653" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="14" visible="true" weight="0.061514195" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.06912879" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="9.469697E-4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="8.912656E-4" />
       <window_info anchor="right" id="Database" order="6" weight="0.3285985" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1004,8 +1014,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="163">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
