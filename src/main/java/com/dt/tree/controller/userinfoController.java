@@ -52,31 +52,11 @@ public class userinfoController {
         return  "index1";
     }
 
-    /**
-     *  登录页面
-     * @param ui
-     * @param request
-     * @param response
-     * @return
-     */
-    @RequestMapping(value="/login")
-    public String login(userinfo ui,HttpServletRequest request, HttpServletResponse response){
-        String page="";
-        try{
-          userinfo userinfo=  uiServicesImpl.Sel(ui);
-          if (userinfo != null){
-            page="../../pages/index";
-
-          }else{
-            page="index1";
-            ///WEB-INF/index1.jsp]
-          }
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-        System.out.println("1111");
-        return page;
+    @RequestMapping(value="/business")
+    public String  business(HttpServletRequest request, HttpServletResponse response){
+         return  "business";
     }
+
 
     /**
      * 去新增项目页面
@@ -92,5 +72,9 @@ public class userinfoController {
     @RequestMapping("/index")
     public String index() {
         return "content";
+    }
+    @RequestMapping("/businessContent")
+    public String businessContent() {
+        return "businessContent";
     }
 }

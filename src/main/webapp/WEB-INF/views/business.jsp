@@ -34,7 +34,7 @@
 
                 </li>
                 <li class="layui-nav-item">
-                    <a href="/ind/sel">业务线管理</a>
+                    <a href="/ind/business">业务线管理</a>
 
                 </li>
                 <li class="layui-nav-item"><a href="">云市场</a></li>
@@ -46,7 +46,7 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;height: 100%;">
-            <iframe id="iframeLeft" scrolling="yes" style="width: 100%;height: 100%" name="iframeLeft" frameborder="0" src="<%=basePath%>/ind/index"></iframe>
+            <iframe id="iframeLeft" scrolling="yes" style="width: 100%;height: 100%" name="iframeLeft" frameborder="0" src="<%=basePath%>/ind/businessContent"></iframe>
         </div>
     </div>
     <div class="layui-footer">
