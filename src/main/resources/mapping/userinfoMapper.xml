@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dt.tree.dao.userinfoDao">
+    <resultMap id="BaseResultMap" type="com.dt.tree.entity.userinfo">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="userName" jdbcType="VARCHAR" property="username" />
+        <result column="passWord" jdbcType="VARCHAR" property="password" />
+        <result column="realName" jdbcType="VARCHAR" property="realName" />
+    </resultMap>
+
+    <select id="Sel" resultType="com.dt.tree.entity.userinfo">
+           select * from userinfo where userName=#{username} and passWord=#{password}
+    </select>
+
+
+
+</mapper>
+
+

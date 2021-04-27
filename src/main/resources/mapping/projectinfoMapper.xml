@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dt.tree.dao.projectinfoDao">
+    <resultMap id="BaseResultMap" type="com.dt.tree.entity.projectinfo">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="projectName" jdbcType="VARCHAR" property="projectname" />
+        <result column="isUse" jdbcType="INTEGER" property="isuse" />
+        <result column="remarks" jdbcType="VARBINARY" property="remarks" />
+    </resultMap>
+
+    <insert id="savePro" parameterType="com.dt.tree.entity.projectinfo">
+           insert into projectinfo(id,projectName,isUse,remarks)
+           values(#{id},#{projectname},#{isuse},#{remarks});
+    </insert>
+<!--  https://blog.csdn.net/shengshenglalalala/article/details/100576106
+  &lt;!&ndash; 新增&ndash;&gt;-->
+<!--    <insert id="save" parameterType="pd">-->
+<!--		insert into FP_FORM_INFO(-->
+<!--			FORM_NAME,	-->
+<!--			PESTS_ID,	-->
+<!--			PESTS_NAME,	-->
+<!--			VERSION,	-->
+<!--			CREATE_DATE,	-->
+<!--			UPDATE_DATE,	-->
+<!--			CREATE_USER_ID,	-->
+<!--			CREATE_USER,	-->
+<!--			FORM_ID-->
+<!--		) values (-->
+<!--			#{FORM_NAME},	-->
+<!--			#{PESTS_ID},	-->
+<!--			#{PESTS_NAME},	-->
+<!--			#{VERSION},	-->
+<!--			#{CREATE_DATE},	-->
+<!--			#{UPDATE_DATE},	-->
+<!--			#{CREATE_USER_ID},	-->
+<!--			#{CREATE_USER},	-->
+<!--			#{FORM_ID}-->
+<!--		)-->
+<!--	</insert>-->
+
+
+<!--    &lt;!&ndash; 删除&ndash;&gt;-->
+    <delete id="delProById"   parameterType="int">
+		delete from projectinfo
+		where
+			id = #{id}
+	</delete>
+
+
+<!--    &lt;!&ndash; 修改 &ndash;&gt;-->
+<!--    <update id="edit" parameterType="pd">-->
+<!--		update  FP_FORM_INFO-->
+<!--			set -->
+<!--				FORM_NAME = #{FORM_NAME},-->
+<!--				PESTS_NAME = #{PESTS_NAME},-->
+<!--				VERSION = #{VERSION},-->
+<!--				UPDATE_DATE = #{UPDATE_DATE},-->
+<!--				CREATE_USER_ID = #{CREATE_USER_ID},-->
+<!--				CREATE_USER = #{CREATE_USER},-->
+<!--			FORM_ID = FORM_ID-->
+<!--			where -->
+<!--				FORM_ID = #{FORM_ID}-->
+<!--	</update>-->
+
+     <select id="getProList" resultType="com.dt.tree.entity.projectinfo">
+         select * from projectinfo
+     </select>
+
+    <select id="getProById" resultType="com.dt.tree.entity.projectinfo" parameterType="int">
+         select * from projectinfo where  1=1
+         <if test="id != null">and id=#{id}</if>
+     </select>
+</mapper>
+
+

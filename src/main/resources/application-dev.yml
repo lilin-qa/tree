@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/tree?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+   # driver-class-name:com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      #页面热加载关闭
+  thymeleaf:
+    cache: false
+#  http:
+#    encoding:
+#      force: true
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.dt.tree.entity
+
+
+
