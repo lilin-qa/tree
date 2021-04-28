@@ -23,7 +23,7 @@
 
 <script type="text/html" id="toolbarDemo">
     <div class="demoTable">
-        搜索ID：
+        服务端名称：
         <div class="layui-inline">
             <input class="layui-input" name="id" id="demoReload" autocomplete="off">
         </div>
@@ -72,7 +72,7 @@
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
-                ,{field:'username', title:'名称', width:450, edit: 'text', sort: true}
+                ,{field:'username', title:'服务端名称', width:450, edit: 'text', sort: true}
                 ,{field:'isuser', title:'是否启用', width:300, edit: 'text', sort: true}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
             ]]

@@ -1,6 +1,8 @@
 package com.dt.tree.controller;
 
+import com.dt.tree.entity.projectinfo;
 import com.dt.tree.entity.userinfo;
+import com.dt.tree.services.projectinfoServicesImpl;
 import com.dt.tree.services.userinfoServices;
 import com.dt.tree.services.userinfoServicesImpl;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.plaf.synth.SynthEditorPaneUI;
+import java.util.List;
 
 @Controller
 /**
@@ -36,6 +39,8 @@ public class userinfoController {
 
     @Resource
     private userinfoServicesImpl uiServicesImpl;
+    @Resource
+    private projectinfoServicesImpl piServicesImpl;
 
     @RequestMapping(value="/sel")
     public String sel(HttpServletRequest request, HttpServletResponse response, userinfo ui){
@@ -74,7 +79,10 @@ public class userinfoController {
         return "content";
     }
     @RequestMapping("/businessContent")
-    public String businessContent() {
+    public String businessContent(HttpServletRequest request, HttpServletResponse response) {
+      List<projectinfo> proList= piServicesImpl.getProList();
+      request.setAttribute("prolist",proList);
+
         return "businessContent";
     }
 }

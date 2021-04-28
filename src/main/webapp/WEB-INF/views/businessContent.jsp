@@ -10,6 +10,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
     <base href="<%=basePath%>">
     <title>Title</title>
@@ -22,17 +23,39 @@
 <table class="layui-hide" id="test" lay-filter="test"></table>
 
 <script type="text/html" id="toolbarDemo">
-    <div class="demoTable">
-        搜索ID：
-        <div class="layui-inline">
-            <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+    <form class="layui-form" action="">
+        <div class="layui-form-item" style="margin-bottom:0px">
+            <label class="layui-form-label">服务端名称：   </label>
+            <div class="layui-input-block">
+                <select name="interest" lay-filter="aihao" lay-search>
+
+                    <option value=""></option>
+                    <option value="0">写作</option>
+                    <option value="1" >阅读</option>
+                    <option value="2">游戏</option>
+                    <option value="3">音乐</option>
+                    <option value="4">旅行</option>
+                </select>
+            </div>
         </div>
-        <button class="layui-btn layui-btn-sm"  data-type="reload">  <i class="layui-icon">&#xe615;</i></button>
+        <div class="layui-form-item">
+            <label class="layui-form-label">业务线名称：  </label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入业务线名称" class="layui-input">
+            </div>
+        </div>
 
-        <button class="layui-btn layui-btn-sm" lay-event="getCheckData" onclick=window.location.href='/pro/addPro'>
-            <i class="layui-icon">&#xe608;</i>新增
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1"><i class="layui-icon">&#xe615;</i>搜索 </button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
 
-        </button>
+
+
+
 
 
     </div>

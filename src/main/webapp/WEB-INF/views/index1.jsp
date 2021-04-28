@@ -34,7 +34,7 @@
 
                 </li>
                 <li class="layui-nav-item">
-                    <a href="/ind/sel">业务线管理</a>
+                    <a href="/ind/business">业务线管理</a>
 
                 </li>
                 <li class="layui-nav-item"><a href="">云市场</a></li>
