@@ -44,13 +44,7 @@ public class projectinfoController {
                   "    \"id\": \"1\"\n" +
                   "    ,\"projectname\": \"杜ddddd甫\"\n" +
                   "    ,\"email\": \"xianxin@layui.com\"\n" +
-                  "    ,\"sex\": \"男\"\n" +
-                  "    ,\"city\": \"浙江杭州\"\n" +
-                  "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
-                  "    ,\"experience\": \"7\"\n" +
-                  "    ,\"ip\": \"192.168.0.8\"\n" +
-                  "    ,\"logins\": null\n" +
-                  "    ,\"joinTime\": \"2016-10-14\"\n" +
+
                   "  }\n" +
                   "]\n" +
                   "}";

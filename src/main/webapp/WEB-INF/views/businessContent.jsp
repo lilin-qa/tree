@@ -23,7 +23,7 @@
 <table class="layui-hide" id="test" lay-filter="test"></table>
 
 <script type="text/html" id="toolbarDemo">
-    <form class="layui-form" action="/pro/getBusinessBySearch">
+    <div class="demoTable">
         <div class="layui-form-item" style="margin-bottom:0px">
             <label class="layui-form-label">服务端名称：   </label>
             <div class="layui-input-block">
@@ -40,24 +40,24 @@
         <div class="layui-form-item">
             <label class="layui-form-label">业务线名称：  </label>
             <div class="layui-input-block">
-                <input type="text" name="businessName" lay-verify="title" autocomplete="off" placeholder="请输入业务线名称" class="layui-input">
+                <input type="text" name="businessName" id="businessName" lay-verify="title" autocomplete="off" placeholder="请输入业务线名称" class="layui-input">
             </div>
         </div>
 
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1"><i class="layui-icon">&#xe615;</i>搜索 </button>
+                <button type="button" class="layui-btn" lay-submit="" lay-filter="demo1"><i class="layui-icon">&#xe615;</i>搜索 </button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>
-    </form>
-
-
-
-
 
 
     </div>
+
+
+
+
+
 
 
 </script>
@@ -105,7 +105,8 @@
 
         var $ = layui.$, active = {
             reload: function(){
-                var demoReload = $('#demoReload');
+                var proid = $('#proid');
+                var businessName=$('#businessName')
 
                 //执行重载
                 table.reload('testReload', {
@@ -113,15 +114,14 @@
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        key: {
-                            id: demoReload.val()
-                        }
+                        pname:pname.val(),
+                        businessName:businessName.val()
                     }
                 }, 'data');
             }
         };
 
-        $('.demoTable .layui-btn').on('click', function(){
+        $('body').on('click', '.demoTable .layui-btn',function() {
             var type = $(this).data('type');
             active[type] ? active[type].call(this) : '';
         });
