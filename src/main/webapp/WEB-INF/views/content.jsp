@@ -93,7 +93,7 @@
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        pname:pname.val()
+                        projectname:pname.val()
                     }
                 }, 'data');
             }

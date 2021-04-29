@@ -30,16 +30,25 @@ public class projectinfoController {
 
     @RequestMapping(value="/getList")
     @ResponseBody
-    public String  getList(HttpServletRequest request, HttpServletResponse response){
+    public String  getList(projectinfo pi,HttpServletRequest request, HttpServletResponse response){
        System.out.println("ssss");
        String projectname= request.getParameter("pname");
-      // List<projectinfo> proList=piImpl.getProList();
+       List<projectinfo> proList=piImpl.getProBy(pi);
+       JSONArray jsonArray=new JSONArray();
+       for (int i=0;i<proList.size();i++){
+           JSONObject jo=new JSONObject();
+           jo.put("id",proList.get(i).getId());
+           jo.put("projectname",proList.get(i).getProjectname());
+           jo.put("isuse",proList.get(i).getIsuse());
+           jsonArray.add(jo);
+       }
+       System.out.println(jsonArray);
         String  str="";
-      if (projectname!="" && projectname!=null){
+
            str="{\n" +
                   "  \"code\": 0\n" +
-                  "  ,\"msg\": \"\"\n" +
-                  "  ,\"count\": "+1+"\n" +
+                  "  ,\"msg\": \"SUCCESS\"\n" +
+                  "  ,\"count\": "+proList.size()+"\n" +
                   "  ,\"data\": [{\n" +
                   "    \"id\": \"1\"\n" +
                   "    ,\"projectname\": \"杜ddddd甫\"\n" +
@@ -54,26 +63,7 @@ public class projectinfoController {
                   "  }\n" +
                   "]\n" +
                   "}";
-      }else{
-          str="{\n" +
-                  "  \"code\": 0\n" +
-                  "  ,\"msg\": \"\"\n" +
-                  "  ,\"count\": "+1+"\n" +
-                  "  ,\"data\": [{\n" +
-                  "    \"id\": \"1\"\n" +
-                  "    ,\"projectname\": \"李白\"\n" +
-                  "    ,\"email\": \"xianxin@layui.com\"\n" +
-                  "    ,\"sex\": \"男\"\n" +
-                  "    ,\"city\": \"浙江杭州\"\n" +
-                  "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
-                  "    ,\"experience\": \"7\"\n" +
-                  "    ,\"ip\": \"192.168.0.8\"\n" +
-                  "    ,\"logins\": null\n" +
-                  "    ,\"joinTime\": \"2016-10-14\"\n" +
-                  "  }\n" +
-                  "]\n" +
-                  "}";
-      }
+
 
        return str;
     }
