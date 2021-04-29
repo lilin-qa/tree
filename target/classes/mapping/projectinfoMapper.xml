@@ -73,15 +73,15 @@
      </select>
 
     <!--if 标签使用类似html的C标签的if -->
-    <select id="getProBy" parameterType="com.dt.tree.entity.projectinfo" resultMap="com.dt.tree.entity.projectinfo">
+    <select id="getProBy" parameterType="com.dt.tree.entity.projectinfo" resultType="com.dt.tree.entity.projectinfo">
         select * from projectinfo where 1=1
         <if test="id != null and id != ''">
             id=#{id}
         </if>
-        <if test="projectName != null and username != ''">
+        <if test="projectname != null and projectname != ''">
             and projectname like concat('%',#{projectname},'%')
         </if>
-        <if test="isUse != null and password != ''">
+        <if test="isuse != null and isuse != ''">
             and isUse=#{isUse}
         </if>
     </select>
