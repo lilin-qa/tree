@@ -21,4 +21,11 @@ public interface projectinfoDao {
 
 
     public void delProById(int id);
+
+    /**
+     *
+     * @param pi projectinfo 实体
+     * @return  projectinfo数组
+     */
+    public  List<projectinfo> getProBy(projectinfo pi);
 }

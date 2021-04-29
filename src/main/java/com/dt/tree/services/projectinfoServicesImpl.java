@@ -38,4 +38,9 @@ public class projectinfoServicesImpl implements projectinfoServices {
     public void delProById(int id){
          pidao.delProById(id);
     }
+
+    @Override
+    public List<projectinfo> getProBy(projectinfo pi) {
+        return pidao.getProBy(pi);
+    }
 }

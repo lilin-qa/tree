@@ -63,7 +63,7 @@
 <!--				FORM_ID = #{FORM_ID}-->
 <!--	</update>-->
 
-     <select id="getProList" resultType="com.dt.tree.entity.projectinfo">
+     <select id="getProList" resultType="com.dt.tree.entity.projectinfo" >
          select * from projectinfo
      </select>
 
@@ -71,6 +71,20 @@
          select * from projectinfo where  1=1
          <if test="id != null">and id=#{id}</if>
      </select>
+
+    <!--if 标签使用类似html的C标签的if -->
+    <select id="getProBy" parameterType="com.dt.tree.entity.projectinfo" resultMap="com.dt.tree.entity.projectinfo">
+        select * from projectinfo where 1=1
+        <if test="id != null and id != ''">
+            id=#{id}
+        </if>
+        <if test="projectName != null and username != ''">
+            and projectname like concat('%',#{projectname},'%')
+        </if>
+        <if test="isUse != null and password != ''">
+            and isUse=#{isUse}
+        </if>
+    </select>
 </mapper>
 
 

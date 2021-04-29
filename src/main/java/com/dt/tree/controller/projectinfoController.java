@@ -30,30 +30,51 @@ public class projectinfoController {
 
     @RequestMapping(value="/getList")
     @ResponseBody
-    public String  getList( HttpServletRequest request, HttpServletResponse response){
+    public String  getList(HttpServletRequest request, HttpServletResponse response){
        System.out.println("ssss");
+       String projectname= request.getParameter("pname");
+      // List<projectinfo> proList=piImpl.getProList();
+        String  str="";
+      if (projectname!="" && projectname!=null){
+           str="{\n" +
+                  "  \"code\": 0\n" +
+                  "  ,\"msg\": \"\"\n" +
+                  "  ,\"count\": "+1+"\n" +
+                  "  ,\"data\": [{\n" +
+                  "    \"id\": \"1\"\n" +
+                  "    ,\"projectname\": \"杜ddddd甫\"\n" +
+                  "    ,\"email\": \"xianxin@layui.com\"\n" +
+                  "    ,\"sex\": \"男\"\n" +
+                  "    ,\"city\": \"浙江杭州\"\n" +
+                  "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
+                  "    ,\"experience\": \"7\"\n" +
+                  "    ,\"ip\": \"192.168.0.8\"\n" +
+                  "    ,\"logins\": null\n" +
+                  "    ,\"joinTime\": \"2016-10-14\"\n" +
+                  "  }\n" +
+                  "]\n" +
+                  "}";
+      }else{
+          str="{\n" +
+                  "  \"code\": 0\n" +
+                  "  ,\"msg\": \"\"\n" +
+                  "  ,\"count\": "+1+"\n" +
+                  "  ,\"data\": [{\n" +
+                  "    \"id\": \"1\"\n" +
+                  "    ,\"projectname\": \"李白\"\n" +
+                  "    ,\"email\": \"xianxin@layui.com\"\n" +
+                  "    ,\"sex\": \"男\"\n" +
+                  "    ,\"city\": \"浙江杭州\"\n" +
+                  "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
+                  "    ,\"experience\": \"7\"\n" +
+                  "    ,\"ip\": \"192.168.0.8\"\n" +
+                  "    ,\"logins\": null\n" +
+                  "    ,\"joinTime\": \"2016-10-14\"\n" +
+                  "  }\n" +
+                  "]\n" +
+                  "}";
+      }
 
-       List<projectinfo> proList=piImpl.getProList();
-
-
-      String  str="{\n" +
-              "  \"code\": 0\n" +
-              "  ,\"msg\": \"\"\n" +
-              "  ,\"count\": "+proList.size()+"\n" +
-              "  ,\"data\": [{\n" +
-              "    \"id\": \"1\"\n" +
-              "    ,\"username\": \"杜甫\"\n" +
-              "    ,\"email\": \"xianxin@layui.com\"\n" +
-              "    ,\"sex\": \"男\"\n" +
-              "    ,\"city\": \"浙江杭州\"\n" +
-              "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
-              "    ,\"experience\": \"7\"\n" +
-              "    ,\"ip\": \"192.168.0.8\"\n" +
-              "    ,\"logins\": null\n" +
-              "    ,\"joinTime\": \"2016-10-14\"\n" +
-              "  }\n" +
-              "]\n" +
-              "}";
        return str;
     }
 
@@ -82,6 +103,35 @@ public class projectinfoController {
 
         piImpl.delProById(id);
         return "content";
+    }
+
+
+    @RequestMapping(value="/getBusinessBySearch")
+    @ResponseBody
+    public String  getBusinessBySearch( int proid,String businessName,HttpServletRequest request, HttpServletResponse response){
+        System.out.println("getBusinessBySearch");
+
+
+
+        String  str="{\n" +
+                "  \"code\": 0\n" +
+                "  ,\"msg\": \"\"\n" +
+                "  ,\"count\": "+22+"\n" +
+                "  ,\"data\": [{\n" +
+                "    \"id\": \"1\"\n" +
+                "    ,\"username\": \"杜甫1111111\"\n" +
+                "    ,\"email\": \"xianxin@layui.com\"\n" +
+                "    ,\"sex\": \"男\"\n" +
+                "    ,\"city\": \"浙江杭州\"\n" +
+                "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
+                "    ,\"experience\": \"7\"\n" +
+                "    ,\"ip\": \"192.168.0.8\"\n" +
+                "    ,\"logins\": null\n" +
+                "    ,\"joinTime\": \"2016-10-14\"\n" +
+                "  }\n" +
+                "]\n" +
+                "}";
+        return str;
     }
 //    public static  void main(String[] args){
 //        /**

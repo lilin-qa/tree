@@ -25,9 +25,9 @@
     <div class="demoTable">
         服务端名称：
         <div class="layui-inline">
-            <input class="layui-input" name="id" id="demoReload" autocomplete="off">
+            <input class="layui-input" name="pname" id="pname" autocomplete="off">
         </div>
-        <button class="layui-btn layui-btn-sm"  data-type="reload">  <i class="layui-icon">&#xe615;</i></button>
+        <button type="button" class="layui-btn layui-btn-sm"  data-type="reload">  <i class="layui-icon">&#xe615;</i></button>
 
             <button class="layui-btn layui-btn-sm" lay-event="getCheckData" onclick=window.location.href='/pro/addPro'>
                 <i class="layui-icon">&#xe608;</i>新增
@@ -48,11 +48,12 @@
          <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"> <i class="layui-icon">&#xe640;</i>删除</a>
 </script>
 
-
 <script src="layui/layui.js" charset="utf-8"></script>
+<script src="js/jquery-3.5.1.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 <script>
+
     layui.use('table', function(){
 
         var table = layui.table;
@@ -72,8 +73,8 @@
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
-                ,{field:'username', title:'服务端名称', width:450, edit: 'text', sort: true}
-                ,{field:'isuser', title:'是否启用', width:300, edit: 'text', sort: true}
+                ,{field:'projectname', title:'服务端名称', width:450, edit: 'text', sort: true}
+                ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
             ]]
             ,id: 'testReload'
@@ -82,26 +83,27 @@
 
 
         var $ = layui.$, active = {
-            reload: function(){
-                var demoReload = $('#demoReload');
 
+            reload: function(){
+                var pname = $('#pname');
+                console.log(pname.val())
                 //执行重载
                 table.reload('testReload', {
                     page: {
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        key: {
-                            id: demoReload.val()
-                        }
+                        pname:pname.val()
                     }
                 }, 'data');
             }
         };
 
-        $('.demoTable .layui-btn').on('click', function(){
-            var type = $(this).data('type');
-            active[type] ? active[type].call(this) : '';
+        $('body').on('click', '.demoTable .layui-btn',function() {
+            console.log(this)
+            var id = $(this).data('type');
+            console.log(id)
+            active[id] ? active[id].call(this) : '';
         });
 
 

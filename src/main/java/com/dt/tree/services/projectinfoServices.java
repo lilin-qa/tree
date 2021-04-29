@@ -22,4 +22,6 @@ public interface projectinfoServices {
 
 
     public void delProById(int id);
+
+    public  List<projectinfo> getProBy(projectinfo pi);
 }

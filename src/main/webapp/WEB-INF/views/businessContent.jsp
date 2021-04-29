@@ -27,8 +27,8 @@
         <div class="layui-form-item" style="margin-bottom:0px">
             <label class="layui-form-label">服务端名称：   </label>
             <div class="layui-input-block">
-                <select name="interest" lay-filter="aihao" lay-search>
-                       <option value="">请选择服务端名称</option>
+                <select name="proid" lay-filter="aihao" lay-search>
+                       <option value="0">请选择服务端名称</option>
                      <c:forEach items="${prolist}" var="plist"  varStatus="p">
                          <option value="${plist.id}">${plist.projectname}</option>
                      </c:forEach>
@@ -40,7 +40,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">业务线名称：  </label>
             <div class="layui-input-block">
-                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入业务线名称" class="layui-input">
+                <input type="text" name="businessName" lay-verify="title" autocomplete="off" placeholder="请输入业务线名称" class="layui-input">
             </div>
         </div>
 

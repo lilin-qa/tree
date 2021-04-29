@@ -39,7 +39,7 @@
 
                 </li>
                 <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">发布商品</a></li>
+                <li class="layui-nav-item"><a href="">测试工具</a></li>
             </ul>
         </div>
     </div>
