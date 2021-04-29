@@ -23,18 +23,17 @@
 <table class="layui-hide" id="test" lay-filter="test"></table>
 
 <script type="text/html" id="toolbarDemo">
-    <form class="layui-form" action="">
+    <form class="layui-form" action="/pro/getBusinessBySearch">
         <div class="layui-form-item" style="margin-bottom:0px">
             <label class="layui-form-label">服务端名称：   </label>
             <div class="layui-input-block">
                 <select name="interest" lay-filter="aihao" lay-search>
+                       <option value="">请选择服务端名称</option>
+                     <c:forEach items="${prolist}" var="plist"  varStatus="p">
+                         <option value="${plist.id}">${plist.projectname}</option>
+                     </c:forEach>
 
-                    <option value=""></option>
-                    <option value="0">写作</option>
-                    <option value="1" >阅读</option>
-                    <option value="2">游戏</option>
-                    <option value="3">音乐</option>
-                    <option value="4">旅行</option>
+
                 </select>
             </div>
         </div>
@@ -83,7 +82,7 @@
         table.render({
 
             elem: '#test'
-            ,url:'/pro/getList'
+            ,url:'/pro/getBusinessBySearch'
             ,toolbar: '#toolbarDemo' //开启头具栏，并为其绑定左侧模板
             // ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
             //     title: '提示'
@@ -163,6 +162,15 @@
         });
     });
 </script>
+<style>
+    .layui-form-label{
+        width: 100px;
+        padding: 9px 0px;
+    }
+    .layui-form-item{
+        margin-top: 10px;
 
+    }
+</style>
 </body>
 </html>
