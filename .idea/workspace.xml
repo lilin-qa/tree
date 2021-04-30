@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="业务线管理">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/businessinfoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/businessinfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/tree.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/businessinfoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/projectinfoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/businessinfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServices.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServicesImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapping/businessinfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/userinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/userinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/projectinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/projectinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/projectinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/projectinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/projectinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/projectinfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/demo1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/demo1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/userinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/userinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/projectinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/projectinfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServicesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServicesImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/projectinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/projectinfoMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="业务线管理" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +258,7 @@
       <workItem from="1619532960421" duration="2249000" />
       <workItem from="1619618689764" duration="4816000" />
       <workItem from="1619702625747" duration="3066000" />
-      <workItem from="1619750108213" duration="12826000" />
+      <workItem from="1619750108213" duration="13214000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1619533580615</created>
