@@ -8,7 +8,10 @@ public interface projectinfoDao {
 
     public void savePro(projectinfo pi);
 
-
+    /**
+     * 查询所有list
+     * @return
+     */
     public List<projectinfo> getProList();
 
 
@@ -19,7 +22,10 @@ public interface projectinfoDao {
      */
     public projectinfo getProById(int id);
 
-
+    /**
+     * 根据Id删除该条数据
+     * @param id
+     */
     public void delProById(int id);
 
     /**
@@ -28,4 +34,16 @@ public interface projectinfoDao {
      * @return  projectinfo数组
      */
     public  List<projectinfo> getProBy(projectinfo pi);
+
+    /**
+     *
+     * @return返回数量总数
+     */
+    public Integer getCountPro();
+
+    /**
+     * 根据Id修改昵称
+     * @param pi
+     */
+    public void  editPro(projectinfo pi);
 }

@@ -42,9 +42,9 @@
 
 <script type="text/html" id="barDemo">
 
+
+
          <a class="layui-btn layui-btn-xs" lay-event="edit" ><i class="layui-icon">&#xe642;</i>编辑</a>
-
-
          <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"> <i class="layui-icon">&#xe640;</i>删除</a>
 </script>
 
@@ -68,15 +68,40 @@
             //     ,layEvent: 'LAYTABLE_TIPS'
             //     ,icon: 'layui-icon-tips'
             // }]
+
+              ,  height : 480
             ,title: '用户数据表'
             ,page: true
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
-                ,{field:'projectname', title:'服务端名称', width:450, edit: 'text', sort: true}
-                ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
+                ,{field:'projectname', title:'服务端名称', width:450, sort: true}
+                ,{field:'isuse', title:'是否启用', width:300,  sort: true}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
             ]]
+            ,done: function(res, curr, count){
+                //如果是异步请求数据方式，res即为你接口返回的信息。
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                console.log(res);
+                //得到当前页码
+                console.log(curr);
+                //得到数据总量
+                console.log(count);
+                $(".layui-table-box").find("[data-field='id']").css("display","none");
+
+                $("[data-field='isuse']").children().each(function(){
+
+                    console.log(this)
+                    if($(this).text()=='1'){
+                        $(this).text("是")
+                    }else if($(this).text()=='0'){
+                        $(this).text("否")
+                    }
+                });
+
+
+                pageCurr=curr;
+            }
             ,id: 'testReload'
         });
 
@@ -93,7 +118,7 @@
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        pname:pname.val()
+                        projectname:pname.val()
                     }
                 }, 'data');
             }

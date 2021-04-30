@@ -35,10 +35,12 @@
 
 <div class="demoTable">
     <form class="layui-form" action="/pro/savePro">
+
         <div class="layui-form-item">
             <label class="layui-form-label">*名称</label>
             <div class="layui-input-block">
                 <input type="text" name="projectname" value="${projectinfo.projectname}"  lay-verify="required" style="width: 70%;" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="hidden" name="id" value="${projectinfo.id}">
             </div>
         </div>
 
@@ -62,7 +64,7 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">备注</label>
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容" value="${projectinfo.remarks}" style="width: 70%;" name="remarks" class="layui-textarea"></textarea>
+                <textarea placeholder="请输入内容"  style="width: 70%;" name="remarks" class="layui-textarea">${projectinfo.remarks}</textarea>
             </div>
         </div>
 

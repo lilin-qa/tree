@@ -82,20 +82,15 @@
         table.render({
 
             elem: '#test'
-            ,url:'/pro/getBusinessBySearch'
+            ,url:'/busi/getBusinessBySearch'
             ,toolbar: '#toolbarDemo' //开启头具栏，并为其绑定左侧模板
-            // ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
-            //     title: '提示'
-            //     ,layEvent: 'LAYTABLE_TIPS'
-            //     ,icon: 'layui-icon-tips'
-            // }]
             ,title: '用户数据表'
             ,page: true
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
-                ,{field:'username', title:'名称', width:450, edit: 'text', sort: true}
-                ,{field:'isuser', title:'是否启用', width:300, edit: 'text', sort: true}
+                ,{field:'busid', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
+                ,{field:'busname', title:'名称', width:450, edit: 'text', sort: true}
+                ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
             ]]
             ,id: 'testReload'

@@ -13,6 +13,17 @@
     ,"ip": "192.168.0.8"
     ,"logins": null
     ,"joinTime": "2016-10-14"
-  }
+  },{
+  "id": "10002"
+,"username": "杜甫11"
+,"email": "xianxin@layui.com"
+,"sex": "男"
+,"city": "浙江杭州"
+,"sign": "鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。"
+,"experience": "7"
+,"ip": "192.168.0.8"
+,"logins": null
+,"joinTime": "2016-10-14"
+}
 ]
 }

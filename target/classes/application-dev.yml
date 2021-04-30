@@ -3,8 +3,8 @@ server:
 
 spring:
   datasource:
-    username: root
-    password: 961012
+    username: test
+    password: 123456
     url: jdbc:mysql://121.40.16.250:3306/tree?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
    # driver-class-name:com.mysql.jdbc.Driver
     driver-class-name: com.mysql.jdbc.Driver

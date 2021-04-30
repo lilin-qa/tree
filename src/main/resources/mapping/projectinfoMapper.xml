@@ -13,6 +13,15 @@
            insert into projectinfo(id,projectName,isUse,remarks)
            values(#{id},#{projectname},#{isuse},#{remarks});
     </insert>
+        <update id="editPro" parameterType="com.dt.tree.entity.projectinfo">
+    		update  projectinfo
+    			set
+    				projectName = #{projectname},
+    				isUse = #{isuse},
+    				remarks = #{remarks}
+    			where
+    				id = #{id}
+    	</update>
 <!--  https://blog.csdn.net/shengshenglalalala/article/details/100576106
   &lt;!&ndash; 新增&ndash;&gt;-->
 <!--    <insert id="save" parameterType="pd">-->
@@ -73,18 +82,26 @@
      </select>
 
     <!--if 标签使用类似html的C标签的if -->
-    <select id="getProBy" parameterType="com.dt.tree.entity.projectinfo" resultMap="com.dt.tree.entity.projectinfo">
+    <select id="getProBy" parameterType="com.dt.tree.entity.projectinfo" resultType="com.dt.tree.entity.projectinfo">
         select * from projectinfo where 1=1
         <if test="id != null and id != ''">
             id=#{id}
         </if>
-        <if test="projectName != null and username != ''">
+        <if test="projectname != null and projectname != ''">
             and projectname like concat('%',#{projectname},'%')
         </if>
-        <if test="isUse != null and password != ''">
+        <if test="isuse != null and isuse != ''">
             and isUse=#{isUse}
         </if>
+        order by id limit #{page,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+
     </select>
+
+    <select id="getCountPro" resultType="int">
+        select COUNT(id)  from projectinfo
+
+    </select>
+
 </mapper>
 
 

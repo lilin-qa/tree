@@ -1,0 +1,52 @@
+package com.dt.tree.controller;
+
+import com.dt.tree.entity.businessinfo;
+import com.dt.tree.services.businessinfoServicesImpl;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+
+@Controller
+@RequestMapping(value = "/busi")
+public class businessinfoController {
+
+
+    private businessinfoServicesImpl biImpl;
+
+
+
+
+    @RequestMapping(value="/getBusinessBySearch")
+    @ResponseBody
+    public String  getBusinessBySearch(businessinfo bi, HttpServletRequest request, HttpServletResponse response){
+        System.out.println("getBusinessBySearch");
+        bi.setPage((bi.getPage()-1)*bi.getLimit());
+        List<businessinfo> busiList=biImpl.getBusiBy(bi);
+
+        JSONArray jsonArray=new JSONArray();
+        for (int i=0;i<busiList.size();i++){
+            JSONObject jo=new JSONObject();
+            jo.put("busid",busiList.get(i).getBusid());
+            jo.put("busname",busiList.get(i).getBusname());
+            jo.put("isuse",busiList.get(i).getIsuse());
+            jsonArray.add(jo);
+        }
+        System.out.println(jsonArray);
+
+        Integer count=biImpl.getCountBusi();
+
+
+        String  str="{\n" +
+                "  \"code\": 0\n" +
+                "  ,\"msg\": \"\"\n" +
+                "  ,\"count\": "+count+"\n" +
+                "  ,\"data\":   "+jsonArray.toString()+"\n" +"}";
+        return str;
+    }
+}

@@ -43,4 +43,14 @@ public class projectinfoServicesImpl implements projectinfoServices {
     public List<projectinfo> getProBy(projectinfo pi) {
         return pidao.getProBy(pi);
     }
+
+    @Override
+    public Integer getCountPro() {
+        return pidao.getCountPro();
+    }
+
+    @Override
+    public void editPro(projectinfo pi) {
+        pidao.editPro(pi);
+    }
 }

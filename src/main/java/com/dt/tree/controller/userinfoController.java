@@ -81,29 +81,7 @@ public class userinfoController {
     }
     @RequestMapping("/businessContent")
     public String businessContent(HttpServletRequest request, HttpServletResponse response) {
-     // List<projectinfo> proList= piServicesImpl.getProList();
-        List<projectinfo> proList=new ArrayList<projectinfo>();
-        projectinfo pi=new projectinfo();
-        pi.setId(1);
-        pi.setProjectname("项目一");
-        pi.setIsuse(0);
-        pi.setRemarks("11111111");
-
-        projectinfo pi1=new projectinfo();
-        pi1.setId(2);
-        pi1.setProjectname("项目2");
-        pi1.setIsuse(0);
-        pi1.setRemarks("2222222");
-
-        projectinfo pi2=new projectinfo();
-        pi2.setId(3);
-        pi2.setProjectname("项目3");
-        pi2.setIsuse(1);
-        pi2.setRemarks("333333333");
-
-        proList.add(pi);
-        proList.add(pi1);
-        proList.add(pi2);
+      List<projectinfo> proList= piServicesImpl.getProList();
       request.setAttribute("prolist",proList);
 
         return "businessContent";

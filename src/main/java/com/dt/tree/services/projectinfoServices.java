@@ -24,4 +24,16 @@ public interface projectinfoServices {
     public void delProById(int id);
 
     public  List<projectinfo> getProBy(projectinfo pi);
+
+    /**
+     *
+     * @return返回数量总数
+     */
+    public Integer getCountPro();
+
+    /**
+     * 根据Id修改信息
+     * @param pi
+     */
+    public void editPro(projectinfo pi);
 }
