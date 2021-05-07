@@ -49,4 +49,15 @@ public class businessinfoController {
                 "  ,\"data\":   "+jsonArray.toString()+"\n" +"}";
         return str;
     }
+
+    @RequestMapping(value="/addBusi")
+    public String addBusi( Integer id,HttpServletRequest request, HttpServletResponse response)throws Exception{
+        if (id!=null){
+            businessinfo busi=  biImpl.getBusiById(id);
+            System.out.println(busi);
+            request.setAttribute("business",busi);
+        }
+
+        return "businessAdd";
+    }
 }

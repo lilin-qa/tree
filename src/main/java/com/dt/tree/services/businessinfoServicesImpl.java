@@ -22,4 +22,9 @@ public class businessinfoServicesImpl implements businessinfoServices  {
     public Integer getCountBusi() {
         return bidao.getCountBusi();
     }
+
+    @Override
+    public businessinfo getBusiById(Integer bid) {
+        return bidao.getBusiById(bid);
+    }
 }

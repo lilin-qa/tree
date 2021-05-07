@@ -10,6 +10,8 @@ public interface businessinfoDao {
 
     public List<businessinfo>  getBusiBy(businessinfo bi);
 
+    public  businessinfo getBusiById(Integer bid);
+
     public Integer getCountBusi();
 
 }

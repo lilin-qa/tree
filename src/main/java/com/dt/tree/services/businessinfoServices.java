@@ -12,4 +12,6 @@ public interface businessinfoServices {
 
    public List<businessinfo> getBusiBy(businessinfo bi);
    public Integer getCountBusi();
+
+   public businessinfo getBusiById(Integer bid);
 }

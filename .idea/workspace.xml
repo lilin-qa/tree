@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="业务线管理" />
+    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/businessinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/businessinfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +87,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619705675155" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSP" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapping" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -89,22 +97,22 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\idea\tree\src\main\webapp" />
-      <recent name="D:\idea\tree\src\main\webapp\WEB-INF\views" />
-      <recent name="D:\idea\tree\src\main\webapp\WEB-INF" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.dt.tree" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.dt.tree.controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\script\treegit\tree\src\main\webapp\WEB-INF\views" />
       <recent name="C:\script\treegit\tree\src\main\resources\mapping" />
       <recent name="D:\idea\tree\src\main\webapp" />
       <recent name="D:\idea\tree\lib" />
       <recent name="D:\idea\tree\src\main\java\com\dt\tree\util" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dt.tree.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea\tree\src\main\webapp" />
+      <recent name="D:\idea\tree\src\main\webapp\WEB-INF\views" />
       <recent name="D:\idea\tree\src\main\webapp\WEB-INF" />
     </key>
   </component>
@@ -258,7 +266,8 @@
       <workItem from="1619532960421" duration="2249000" />
       <workItem from="1619618689764" duration="4816000" />
       <workItem from="1619702625747" duration="3066000" />
-      <workItem from="1619750108213" duration="13214000" />
+      <workItem from="1619750108213" duration="13970000" />
+      <workItem from="1620368155702" duration="1991000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1619533580615</created>
@@ -302,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619705656963</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="业务线管理">
+      <created>1619780373176</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619780373176</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
