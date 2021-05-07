@@ -96,6 +96,17 @@
                 ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
             ]]
+                ,parseData: function (res) {
+                    if(res.count == 0)
+                    {
+                        return {
+                            'code': 201, //接口状态
+                            'msg': '无数据', //提示文本
+                            'count': 0, //数据长度
+                            'data': [] //数据列表，是直接填充进表格中的数组
+                        }
+                    }
+                }
             ,id: 'testReload'
         });
 

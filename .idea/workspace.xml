@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/businessinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/businessinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +264,7 @@
       <workItem from="1619618689764" duration="4816000" />
       <workItem from="1619702625747" duration="3066000" />
       <workItem from="1619750108213" duration="13970000" />
-      <workItem from="1620368155702" duration="1991000" />
+      <workItem from="1620368155702" duration="4267000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1619533580615</created>
@@ -318,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619780373176</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="业务线管理新增icon及页面跳转">
+      <created>1620382892933</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620382892933</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -362,7 +366,8 @@
     <MESSAGE value="服务端-搜索" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;target/classes/com/dt/tree/controller/projectinfoController.class" />
     <MESSAGE value="业务线管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="业务线管理" />
+    <MESSAGE value="业务线管理新增icon及页面跳转" />
+    <option name="LAST_COMMIT_MESSAGE" value="业务线管理新增icon及页面跳转" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="42" key="#Notifications" timestamp="1594219699671">
@@ -527,6 +532,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
           <line>73</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/dao/userinfoDao.java</url>

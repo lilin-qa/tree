@@ -24,22 +24,25 @@ public class businessinfoController {
 
     @RequestMapping(value="/getBusinessBySearch")
     @ResponseBody
-    public String  getBusinessBySearch(businessinfo bi, HttpServletRequest request, HttpServletResponse response){
+    public String  getBusinessBySearch(businessinfo bi, HttpServletRequest request, HttpServletResponse response) throws  Exception{
         System.out.println("getBusinessBySearch");
         bi.setPage((bi.getPage()-1)*bi.getLimit());
-        List<businessinfo> busiList=biImpl.getBusiBy(bi);
-
-        JSONArray jsonArray=new JSONArray();
-        for (int i=0;i<busiList.size();i++){
-            JSONObject jo=new JSONObject();
-            jo.put("busid",busiList.get(i).getBusid());
-            jo.put("busname",busiList.get(i).getBusname());
-            jo.put("isuse",busiList.get(i).getIsuse());
-            jsonArray.add(jo);
-        }
-        System.out.println(jsonArray);
 
         Integer count=biImpl.getCountBusi();
+        JSONArray jsonArray=new JSONArray();
+        if (count>0){
+            List<businessinfo> busiList=biImpl.getBusiBy(bi);
+
+            for (int i=0;i<busiList.size();i++){
+                JSONObject jo=new JSONObject();
+                jo.put("busid",busiList.get(i).getBusid());
+                jo.put("busname",busiList.get(i).getBusname());
+                jo.put("isuse",busiList.get(i).getIsuse());
+                jsonArray.add(jo);
+            }
+
+        }
+        System.out.println(jsonArray);
 
 
         String  str="{\n" +
