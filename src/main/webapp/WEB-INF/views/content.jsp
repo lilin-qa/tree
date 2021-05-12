@@ -79,6 +79,17 @@
                 ,{field:'isuse', title:'是否启用', width:300,  sort: true}
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
             ]]
+            ,parseData: function (res) {
+                if(res.count == 0)
+                {
+                    return {
+                        'code': 201, //接口状态
+                        'msg': '无数据', //提示文本
+                        'count': 0, //数据长度
+                        'data': [] //数据列表，是直接填充进表格中的数组
+                    }
+                }
+            }
             ,done: function(res, curr, count){
                 //如果是异步请求数据方式，res即为你接口返回的信息。
                 //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度

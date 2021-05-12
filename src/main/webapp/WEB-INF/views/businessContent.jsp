@@ -47,7 +47,7 @@
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button type="button" class="layui-btn layui-btn-sm" lay-submit="" lay-filter="demo1"><i class="layui-icon">&#xe615;</i>搜索 </button>
-                <button class="layui-btn layui-btn-sm" lay-event="getCheckData" onclick=window.location.href='/pro/addPro'>
+                <button class="layui-btn layui-btn-sm" lay-event="getCheckData" onclick=window.location.href='/busi/addBusi'>
                     <i class="layui-icon">&#xe608;</i>新增
 
                 </button>
@@ -107,6 +107,29 @@
                         }
                     }
                 }
+            ,done: function(res, curr, count){
+                //如果是异步请求数据方式，res即为你接口返回的信息。
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                console.log(res);
+                //得到当前页码
+                console.log(curr);
+                //得到数据总量
+                console.log(count);
+                $(".layui-table-box").find("[data-field='id']").css("display","none");
+
+                $("[data-field='isuse']").children().each(function(){
+
+                    console.log(this)
+                    if($(this).text()=='1'){
+                        $(this).text("是")
+                    }else if($(this).text()=='0'){
+                        $(this).text("否")
+                    }
+                });
+
+
+                pageCurr=curr;
+            }
             ,id: 'testReload'
         });
 

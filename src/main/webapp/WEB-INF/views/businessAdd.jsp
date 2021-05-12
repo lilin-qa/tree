@@ -24,10 +24,10 @@
 </head>
 <body>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-    <c:if test = "${projectinfo.isuse!=null}">
+    <c:if test = "${business.isuse!=null}">
         <legend>修改</legend>
     </c:if>
-    <c:if test = "${projectinfo.isuse==null}">
+    <c:if test = "${business.isuse==null}">
         <legend>新增</legend>
     </c:if>
 
@@ -39,8 +39,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">*名称</label>
             <div class="layui-input-block">
-                <input type="text" name="projectname" value="${projectinfo.projectname}"  lay-verify="required" style="width: 70%;" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-                <input type="hidden" name="id" value="${projectinfo.id}">
+                <input type="text" name="projectname" value="${business.projectname}"  lay-verify="required" style="width: 70%;" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="hidden" name="id" value="${business.id}">
             </div>
         </div>
 
@@ -48,11 +48,11 @@
             <label class="layui-form-label">开关</label>
             <div class="layui-input-block">
 
-                <c:if test = "${projectinfo.isuse!=null}">
-                    <input type="checkbox" checked="" name="isuse"  value="${projectinfo.isuse}" lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
+                <c:if test = "${business.isuse!=null}">
+                    <input type="checkbox" checked="" name="isuse"  value="${business.isuse}" lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
 
                 </c:if>
-                <c:if test = "${projectinfo.isuse==null}">
+                <c:if test = "${business.isuse==null}">
                     <input type="checkbox" checked="" name="isuse"  value="1" lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
 
 
@@ -64,7 +64,7 @@
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">备注</label>
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容"  style="width: 70%;" name="remarks" class="layui-textarea">${projectinfo.remarks}</textarea>
+                <textarea placeholder="请输入内容"  style="width: 70%;" name="remarks" class="layui-textarea">${business.remarks}</textarea>
             </div>
         </div>
 
