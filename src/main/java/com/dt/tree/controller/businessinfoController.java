@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 @RequestMapping(value = "/busi")
 public class businessinfoController {
 
-
+    @Resource
     private businessinfoServicesImpl biImpl;
 
 
@@ -27,22 +28,24 @@ public class businessinfoController {
     public String  getBusinessBySearch(businessinfo bi, HttpServletRequest request, HttpServletResponse response) throws  Exception{
         System.out.println("getBusinessBySearch");
         bi.setPage((bi.getPage()-1)*bi.getLimit());
-
-        Integer count=biImpl.getCountBusi();
         JSONArray jsonArray=new JSONArray();
-        if (count>0){
-            List<businessinfo> busiList=biImpl.getBusiBy(bi);
+        Integer count=biImpl.getCountBusi();
 
-            for (int i=0;i<busiList.size();i++){
-                JSONObject jo=new JSONObject();
-                jo.put("busid",busiList.get(i).getBusid());
-                jo.put("busname",busiList.get(i).getBusname());
-                jo.put("isuse",busiList.get(i).getIsuse());
-                jsonArray.add(jo);
+
+            if (count>0){
+                List<businessinfo> busiList=biImpl.getBusiBy(bi);
+
+                for (int i=0;i<busiList.size();i++){
+                    JSONObject jo=new JSONObject();
+                    jo.put("busid",busiList.get(i).getBusid());
+                    jo.put("busname",busiList.get(i).getBusname());
+                    jo.put("isuse",busiList.get(i).getIsuse());
+                    jsonArray.add(jo);
+                }
+
             }
+            System.out.println(jsonArray);
 
-        }
-        System.out.println(jsonArray);
 
 
         String  str="{\n" +

@@ -2,15 +2,17 @@ package com.dt.tree.services;
 
 import com.dt.tree.dao.businessinfoDao;
 import com.dt.tree.entity.businessinfo;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
-
+@Service("businessinfoServices")
 public class businessinfoServicesImpl implements businessinfoServices  {
-
+    @Resource
     private businessinfoDao bidao;
     @Override
-    public void savePro(businessinfo bi) {
-          bidao.savePro(bi);
+    public void saveBusi(businessinfo bi) {
+          bidao.saveBusi(bi);
     }
 
     @Override

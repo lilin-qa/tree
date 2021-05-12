@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface businessinfoDao {
 
-    public void savePro(businessinfo bi);
+    public void saveBusi(businessinfo bi);
 
     public List<businessinfo>  getBusiBy(businessinfo bi);
 
