@@ -4,6 +4,7 @@ import com.dt.tree.entity.businessinfo;
 import com.dt.tree.entity.projectinfo;
 import com.dt.tree.services.businessinfoServicesImpl;
 import com.dt.tree.services.projectinfoServicesImpl;
+import com.dt.tree.util.getTime;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -78,8 +80,12 @@ public class businessinfoController {
             busi.setIsuse(0);
         }
         if (busi.getBusid()==null){
+            busi.setCreate_time(getTime.getNowDate(new Date()));
+            System.out.println(getTime.getNowDate(new Date()));
+            busi.setUpdate_time(getTime.getNowDate(new Date()));
             biImpl.saveBusi(busi);
         }else {
+            busi.setUpdate_time(getTime.getNowDate(new Date()));
             biImpl.editBusi(busi);
         }
         List<projectinfo> proList= piImpl.getProList();

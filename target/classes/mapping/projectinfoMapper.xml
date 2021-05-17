@@ -7,18 +7,23 @@
         <result column="projectName" jdbcType="VARCHAR" property="projectname" />
         <result column="isUse" jdbcType="INTEGER" property="isuse" />
         <result column="remarks" jdbcType="VARBINARY" property="remarks" />
+        <result column="isdelete" jdbcType="INTEGER" property="isdelete" />
+        <result column="create_time" jdbcType="DATE" property="create_time" />
+        <result column="update_time" jdbcType="DATE" property="update_time" />
     </resultMap>
 
     <insert id="savePro" parameterType="com.dt.tree.entity.projectinfo">
-           insert into projectinfo(id,projectName,isUse,remarks)
-           values(#{id},#{projectname},#{isuse},#{remarks});
+           insert into projectinfo(id,projectName,isUse,remarks,isdelete,create_time,update_time)
+           values(#{id},#{projectname},#{isuse},#{remarks},0,#{create_time},#{update_time});
     </insert>
         <update id="editPro" parameterType="com.dt.tree.entity.projectinfo">
     		update  projectinfo
     			set
     				projectName = #{projectname},
     				isUse = #{isuse},
-    				remarks = #{remarks}
+    				remarks = #{remarks},
+    				update_time=#{update_time}
+
     			where
     				id = #{id}
     	</update>
@@ -50,11 +55,21 @@
 
 
 <!--    &lt;!&ndash; 删除&ndash;&gt;-->
-    <delete id="delProById"   parameterType="int">
-		delete from projectinfo
-		where
-			id = #{id}
-	</delete>
+    <update id="delProById" parameterType="int">
+    		update  projectinfo
+    			set
+
+    				isdelete=1,
+    				update_time= NOW()
+
+    			where
+    				id = #{id}
+    	</update>
+<!--    <delete id="delProById"   parameterType="int">-->
+<!--		delete from projectinfo-->
+<!--		where-->
+<!--			id = #{id}-->
+<!--	</delete>-->
 
 
 <!--    &lt;!&ndash; 修改 &ndash;&gt;-->
@@ -73,17 +88,17 @@
 <!--	</update>-->
 
      <select id="getProList" resultType="com.dt.tree.entity.projectinfo" >
-         select * from projectinfo
+         select * from projectinfo  where isdelete=0
      </select>
 
     <select id="getProById" resultType="com.dt.tree.entity.projectinfo" parameterType="int">
-         select * from projectinfo where  1=1
+         select * from projectinfo where  1=1 and isdelete=0
          <if test="id != null">and id=#{id}</if>
      </select>
 
     <!--if 标签使用类似html的C标签的if -->
     <select id="getProBy" parameterType="com.dt.tree.entity.projectinfo" resultType="com.dt.tree.entity.projectinfo">
-        select * from projectinfo where 1=1
+        select * from projectinfo where 1=1 and isdelete=0
         <if test="id != null and id != ''">
             id=#{id}
         </if>
@@ -98,7 +113,7 @@
     </select>
 
     <select id="getCountPro" resultType="int">
-        select COUNT(id)  from projectinfo
+        select COUNT(id)  from projectinfo where  isdelete=0
 
     </select>
 

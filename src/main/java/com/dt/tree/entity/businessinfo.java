@@ -1,5 +1,7 @@
 package com.dt.tree.entity;
 
+import java.util.Date;
+
 public class businessinfo {
 
     private  Integer busid;//业务线ID
@@ -7,8 +9,36 @@ public class businessinfo {
     private  Integer isuse;//是否使用
     private String remarks;//备注
     private  Integer proid;//外键-服务端ID
+    private Integer isdelete;
+    private Date create_time;
+    private Date update_time;
     private int page;
     private int limit;
+    public Integer getIsdelete() {
+        return isdelete;
+    }
+
+    public void setIsdelete(Integer isdelete) {
+        this.isdelete = isdelete;
+    }
+
+    public Date getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
+    }
+
+    public Date getUpdate_time() {
+        return update_time;
+    }
+
+    public void setUpdate_time(Date update_time) {
+        this.update_time = update_time;
+    }
+
+
     public int getPage() {
         return page;
     }

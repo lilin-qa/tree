@@ -4,6 +4,7 @@ import com.dt.tree.entity.projectinfo;
 import com.dt.tree.services.projectinfoServices;
 import com.dt.tree.services.projectinfoServicesImpl;
 
+import com.dt.tree.util.getTime;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class projectinfoController {
 
     @RequestMapping(value="/getList")
     @ResponseBody
-    public String  getList(projectinfo pi,HttpServletRequest request, HttpServletResponse response){
+    public String  getList(projectinfo pi,HttpServletRequest request, HttpServletResponse response) throws  Exception{
        System.out.println("ssss");
        pi.setPage((pi.getPage()-1)*pi.getLimit());
        List<projectinfo> proList=piImpl.getProBy(pi);
@@ -42,6 +44,7 @@ public class projectinfoController {
            jo.put("id",proList.get(i).getId());
            jo.put("projectname",proList.get(i).getProjectname());
            jo.put("isuse",proList.get(i).getIsuse());
+           jo.put("createTime",getTime.getNowDateString(proList.get(i).getCreate_time()));
            jsonArray.add(jo);
        }
        System.out.println(jsonArray);
@@ -71,12 +74,18 @@ public class projectinfoController {
 
     @RequestMapping(value="/savePro")
     public String savePro(projectinfo pi ,HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         if (pi.getIsuse()==null){
             pi.setIsuse(0);
         }
         if (pi.getId()==null){
+
+            pi.setCreate_time(getTime.getNowDate(new Date()));
+            System.out.println(getTime.getNowDate(new Date()));
+            pi.setUpdate_time(getTime.getNowDate(new Date()));
             piImpl.savePro(pi);
         }else {
+            pi.setUpdate_time(new Date());
             piImpl.editPro(pi);
         }
 

@@ -8,12 +8,14 @@
         <result column="isuse" jdbcType="INTEGER" property="isuse" />
         <result column="remarks" jdbcType="VARBINARY" property="remarks" />
         <result column="proid" jdbcType="INTEGER" property="proid" />
-
+        <result column="isdelete" jdbcType="INTEGER" property="isdelete" />
+        <result column="create_time" jdbcType="DATE" property="create_time" />
+        <result column="update_time" jdbcType="DATE" property="update_time" />
     </resultMap>
 
     <insert id="saveBusi" parameterType="com.dt.tree.entity.businessinfo">
-           insert into businessinfo(busid,busname,isuse,remarks,proid)
-           values(#{busid},#{busname},#{isuse},#{remarks},#{proid});
+           insert into businessinfo(busid,busname,isuse,remarks,proid,isdelete,create_time,update_time)
+           values(#{busid},#{busname},#{isuse},#{remarks},#{proid},0,#{create_time},#{update_time});
     </insert>
         <update id="editBusi" parameterType="com.dt.tree.entity.businessinfo">
     		update  businessinfo
@@ -21,16 +23,28 @@
     				busname = #{busname},
     				isuse = #{isuse},
     				remarks = #{remarks},
-    				proid=#{proid}
+    				proid=#{proid},
+    				update_time=#{update_time}
+
+    			where
+    				busid = #{busid}
+    	</update>
+    <update id="delBusiById" parameterType="int">
+    		update  businessinfo
+    			set
+
+    				isdelete=1,
+    				update_time= NOW()
+
     			where
     				busid = #{busid}
     	</update>
 <!--    &lt;!&ndash; 删除&ndash;&gt;-->
-    <delete id="delBusiById"   parameterType="int">
-		delete from businessinfo
-		where
-			busid = #{busid}
-	</delete>
+<!--    <delete id="delBusiById"   parameterType="int">-->
+<!--		delete from businessinfo-->
+<!--		where-->
+<!--			busid = #{busid}-->
+<!--	</delete>-->
      <select id="getBusiList" resultType="com.dt.tree.entity.businessinfo" >
          select * from businessinfo
      </select>
