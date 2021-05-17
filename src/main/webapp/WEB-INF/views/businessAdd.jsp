@@ -24,25 +24,45 @@
 </head>
 <body>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-    <c:if test = "${business.isuse!=null}">
+    <c:if test = "${business.busid!=null}">
         <legend>修改</legend>
     </c:if>
-    <c:if test = "${business.isuse==null}">
+    <c:if test = "${business.busid==null}">
         <legend>新增</legend>
     </c:if>
 
 </fieldset>
 
 <div class="demoTable">
-    <form class="layui-form" action="/pro/savePro">
+    <form class="layui-form" action="/busi/saveBusi">
 
         <div class="layui-form-item">
             <label class="layui-form-label">*名称</label>
             <div class="layui-input-block">
-                <input type="text" name="projectname" value="${business.projectname}"  lay-verify="required" style="width: 70%;" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
-                <input type="hidden" name="id" value="${business.id}">
+                <input type="text" name="busname" value="${business.busname}"  lay-verify="required" style="width: 70%;" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="hidden" name="busid" value="${business.busid}">
             </div>
         </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">所属服务端</label>
+            <div class="layui-input-inline">
+                <select name="proid" lay-verify="required" lay-search="">
+                    <option value="">请选择服务端名称</option>
+                    <c:forEach items="${priList}" var="plist"  varStatus="p">
+                        <c:choose>
+                            <c:when test="${business.proid== plist.id}">    <!--如果 -->
+                                <option selected value="${plist.id}">${plist.projectname}</option>
+                            </c:when>
+                            <c:otherwise>  <!--否则 -->
+                                <option value="${plist.id}">${plist.projectname}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+
+                </select>
+            </div>
+        </div>
+
 
         <div class="layui-form-item">
             <label class="layui-form-label">开关</label>

@@ -18,7 +18,7 @@
         <update id="editBusi" parameterType="com.dt.tree.entity.businessinfo">
     		update  businessinfo
     			set
-    				busname = #{projectname},
+    				busname = #{busname},
     				isuse = #{isuse},
     				remarks = #{remarks},
     				proid=#{proid}

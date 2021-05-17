@@ -10,8 +10,11 @@ public interface businessinfoServices {
 
    public  void saveBusi(businessinfo bi);
 
+   public void editBusi(businessinfo bi);
+
    public List<businessinfo> getBusiBy(businessinfo bi);
    public Integer getCountBusi();
 
    public businessinfo getBusiById(Integer bid);
+   public void delBusiById(Integer bid);
 }

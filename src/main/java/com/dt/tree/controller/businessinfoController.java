@@ -1,7 +1,9 @@
 package com.dt.tree.controller;
 
 import com.dt.tree.entity.businessinfo;
+import com.dt.tree.entity.projectinfo;
 import com.dt.tree.services.businessinfoServicesImpl;
+import com.dt.tree.services.projectinfoServicesImpl;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,8 @@ public class businessinfoController {
     @Resource
     private businessinfoServicesImpl biImpl;
 
+    @Resource
+    private projectinfoServicesImpl piImpl;
 
 
 
@@ -57,13 +61,40 @@ public class businessinfoController {
     }
 
     @RequestMapping(value="/addBusi")
-    public String addBusi( Integer id,HttpServletRequest request, HttpServletResponse response)throws Exception{
-        if (id!=null){
-            businessinfo busi=  biImpl.getBusiById(id);
+    public String addBusi( Integer busid,HttpServletRequest request, HttpServletResponse response)throws Exception{
+        if (busid!=null){
+            businessinfo busi=  biImpl.getBusiById(busid);
             System.out.println(busi);
             request.setAttribute("business",busi);
         }
 
+         List<projectinfo> priList= piImpl.getProList();
+        request.setAttribute("priList",priList);
         return "businessAdd";
     }
+    @RequestMapping(value="/saveBusi")
+    public String saveBusi(businessinfo busi ,HttpServletRequest request, HttpServletResponse response) throws Exception {
+        if (busi.getIsuse()==null){
+            busi.setIsuse(0);
+        }
+        if (busi.getBusid()==null){
+            biImpl.saveBusi(busi);
+        }else {
+            biImpl.editBusi(busi);
+        }
+        List<projectinfo> proList= piImpl.getProList();
+        request.setAttribute("prolist",proList);
+        return "businessContent";
+    }
+
+
+
+    @RequestMapping(value="/delBusi")
+    public String delBusi(int busid,HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        biImpl.delBusiById(busid);
+        return "businessContent";
+    }
+
+
 }

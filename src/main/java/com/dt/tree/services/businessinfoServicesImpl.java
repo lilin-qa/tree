@@ -16,6 +16,11 @@ public class businessinfoServicesImpl implements businessinfoServices  {
     }
 
     @Override
+    public void editBusi(businessinfo bi) {
+        bidao.editBusi(bi);
+    }
+
+    @Override
     public List<businessinfo> getBusiBy(businessinfo bi) {
         return bidao.getBusiBy(bi);
     }
@@ -28,5 +33,10 @@ public class businessinfoServicesImpl implements businessinfoServices  {
     @Override
     public businessinfo getBusiById(Integer bid) {
         return bidao.getBusiById(bid);
+    }
+
+    @Override
+    public void delBusiById(Integer bid) {
+        bidao.delBusiById(bid);
     }
 }
