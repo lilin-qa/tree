@@ -63,21 +63,15 @@
             elem: '#test'
             ,url:'/pro/getList'
             ,toolbar: '#toolbarDemo' //开启头具栏，并为其绑定左侧模板
-            // ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
-            //     title: '提示'
-            //     ,layEvent: 'LAYTABLE_TIPS'
-            //     ,icon: 'layui-icon-tips'
-            // }]
-
               ,  height : 480
             ,title: '服务端集合表'
             ,page: true
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
+                ,{field:'id', title:'ID', width:80, fixed: 'left',  sort: true}
                 ,{field:'projectname', title:'服务端名称', width:450, sort: true}
                 ,{field:'isuse', title:'是否启用', width:300,  sort: true}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:211 }
+                ,{ title:'操作', toolbar: '#barDemo', width:211 }
             ]]
             ,parseData: function (res) {
                 if(res.count == 0)

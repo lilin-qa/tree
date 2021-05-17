@@ -87,10 +87,10 @@
             ,cols: [[
 
                 ,{type: 'checkbox',  fixed: 'left'}
-                ,{field:'busid', title:'ID',  fixed: 'left', unresize: true, sort: true}
+                ,{field:'busid', title:'ID',  width:80, fixed: 'left', sort: true}
                 ,{field:'busname', title:'业务线名称', width:450, edit: 'text', sort: true}
                 ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo',  toolbar: '#barDemo' ,width:211}
+                ,{ title:'操作',  toolbar: '#barDemo' ,width:211}
             ]]
                 ,parseData: function (res) {
                     if(res.count == 0)
