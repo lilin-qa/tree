@@ -47,13 +47,14 @@
         <div class="layui-form-item">
             <label class="layui-form-label">开关</label>
             <div class="layui-input-block">
-
+                ${projectinfo.isuse}
                 <c:if test = "${projectinfo.isuse!=null}">
+                    1
                     <input type="checkbox" checked="" name="isuse"  value="${projectinfo.isuse}" lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
 
                 </c:if>
                 <c:if test = "${projectinfo.isuse==null}">
-                    <input type="checkbox" checked="" name="isuse"  value="1" lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
+                    <input type="checkbox" checked="" name="isuse"   lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
 
 
                 </c:if>
