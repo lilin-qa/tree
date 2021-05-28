@@ -6,7 +6,7 @@ public class businessinfo {
 
     private  Integer busid;//业务线ID
     private  String busname;//业务线名称
-    private  Integer isuse;//是否使用
+    private  String isuse;//是否使用
     private String remarks;//备注
     private  Integer proid;//外键-服务端ID
     private Integer isdelete;
@@ -73,11 +73,11 @@ public class businessinfo {
         this.busname = busname;
     }
 
-    public Integer getIsuse() {
+    public String getIsuse() {
         return isuse;
     }
 
-    public void setIsuse(Integer isuse) {
+    public void setIsuse(String isuse) {
         this.isuse = isuse;
     }
 

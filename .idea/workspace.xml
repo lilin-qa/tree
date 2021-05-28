@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="" />
+    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="业务线管理新增icon及页面跳转1.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/projectinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/projectinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/businessinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/businessinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/projectinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/projectinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/projectinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/projectinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/projectinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/projectinfoMapper.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +296,8 @@
       <workItem from="1621424413572" duration="1549000" />
       <workItem from="1621477640134" duration="4469000" />
       <workItem from="1621848231184" duration="2289000" />
-      <workItem from="1622117677427" duration="469000" />
+      <workItem from="1622117677427" duration="2904000" />
+      <workItem from="1622168317629" duration="3309000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1619533580615</created>
@@ -411,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622117758986</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="业务线管理新增icon及页面跳转1.1">
+      <created>1622118159275</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1622118159275</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

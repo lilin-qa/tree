@@ -5,7 +5,7 @@
     <resultMap id="BaseResultMap" type="com.dt.tree.entity.businessinfo">
         <result column="busid" jdbcType="INTEGER" property="busid" />
         <result column="busname" jdbcType="VARCHAR" property="busname" />
-        <result column="isuse" jdbcType="INTEGER" property="isuse" />
+        <result column="isuse" jdbcType="VARCHAR" property="isuse" />
         <result column="remarks" jdbcType="VARBINARY" property="remarks" />
         <result column="proid" jdbcType="INTEGER" property="proid" />
         <result column="isdelete" jdbcType="INTEGER" property="isdelete" />

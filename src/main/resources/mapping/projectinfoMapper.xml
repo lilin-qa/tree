@@ -5,7 +5,7 @@
     <resultMap id="BaseResultMap" type="com.dt.tree.entity.projectinfo">
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="projectName" jdbcType="VARCHAR" property="projectname" />
-        <result column="isUse" jdbcType="INTEGER" property="isuse" />
+        <result column="isUse" jdbcType="VARCHAR" property="isuse" />
         <result column="remarks" jdbcType="VARBINARY" property="remarks" />
         <result column="isdelete" jdbcType="INTEGER" property="isdelete" />
         <result column="create_time" jdbcType="DATE" property="create_time" />

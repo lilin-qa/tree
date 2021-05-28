@@ -68,12 +68,14 @@
             <label class="layui-form-label">开关</label>
             <div class="layui-input-block">
 
-                <c:if test = "${business.isuse!=null}">
-                    <input type="checkbox" checked="" name="isuse"  value="${business.isuse}" lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
+                <c:if test = "${projectinfo.isuse=='off' || projectinfo.isuse==null}">
+
+
+                    <input type="checkbox" name="isuse"   lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
 
                 </c:if>
-                <c:if test = "${business.isuse==null}">
-                    <input type="checkbox" checked="" name="isuse"  value="1" lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
+                <c:if test = "${projectinfo.isuse=='on'}">
+                    <input type="checkbox" checked="" name="isuse"   lay-skin="switch" lay-filter="switchTest" lay-text="启用|关闭">
 
 
                 </c:if>

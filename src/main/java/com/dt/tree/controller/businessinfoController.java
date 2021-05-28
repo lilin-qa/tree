@@ -77,7 +77,7 @@ public class businessinfoController {
     @RequestMapping(value="/saveBusi")
     public String saveBusi(businessinfo busi ,HttpServletRequest request, HttpServletResponse response) throws Exception {
         if (busi.getIsuse()==null){
-            busi.setIsuse(0);
+            busi.setIsuse("off");
         }
         if (busi.getBusid()==null){
             busi.setCreate_time(getTime.getNowDate(new Date()));

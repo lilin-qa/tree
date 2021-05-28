@@ -5,7 +5,7 @@ import java.util.Date;
 public class projectinfo {
     private  Integer id;
     private  String projectname;
-    private  Integer isuse;
+    private  String isuse;
     private String abb;
     private Integer isdelete;
     private Date create_time;
@@ -77,11 +77,11 @@ public class projectinfo {
         return abb;
     }
 
-    public Integer getIsuse() {
+    public String getIsuse() {
         return isuse;
     }
 
-    public void setIsuse(Integer isuse) {
+    public void setIsuse(String isuse) {
         this.isuse = isuse;
     }
 

@@ -76,7 +76,7 @@ public class projectinfoController {
     public String savePro(projectinfo pi ,HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         if (pi.getIsuse()==null){
-            pi.setIsuse(0);
+            pi.setIsuse("off");
         }
         if (pi.getId()==null){
 
