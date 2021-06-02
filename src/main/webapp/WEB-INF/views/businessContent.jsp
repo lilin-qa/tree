@@ -89,6 +89,7 @@
                 ,{type: 'checkbox',  fixed: 'left'}
                 ,{field:'busid', title:'ID',  width:80, fixed: 'left', sort: true}
                 ,{field:'busname', title:'业务线名称', width:450, edit: 'text', sort: true}
+                ,{field:'busname', title:'所属服务', width:450, edit: 'text', sort: true}
                 ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
                 ,{ title:'操作',  toolbar: '#barDemo' ,width:211}
             ]]
