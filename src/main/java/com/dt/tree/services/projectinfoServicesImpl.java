@@ -35,8 +35,8 @@ public class projectinfoServicesImpl implements projectinfoServices {
 
 
     @Override
-    public void delProById(int id){
-         pidao.delProById(id);
+    public int delProById(int id){
+        return pidao.delProById(id);
     }
 
     @Override

@@ -93,9 +93,11 @@ public class projectinfoController {
     }
 
     @RequestMapping(value="/delPro")
+    @ResponseBody
     public String delPro(int id,HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        piImpl.delProById(id);
+        int num = piImpl.delProById(id);
+
         return "content";
     }
 

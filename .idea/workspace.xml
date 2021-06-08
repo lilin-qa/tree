@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="业务线管理新增icon及页面跳转1.1">
+    <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/free-mybatis-generator-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/BusinessinfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/Businessinfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfoPro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/BusinessinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/projectinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/projectinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/businessinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/businessinfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/projectinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/projectinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/businessinfoDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/projectinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/projectinfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServicesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/businessinfoMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/projectinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/projectinfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/projectinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/projectinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/businessinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/businessinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/projectinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/projectinfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/businessinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/businessinfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServicesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServicesImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServicesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServicesImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapping/businessinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/businessinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tree.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +58,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tree" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tree" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tree" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tree: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FavoritesManager">
@@ -82,21 +121,24 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619705675155" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSP" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -297,7 +339,15 @@
       <workItem from="1621477640134" duration="4469000" />
       <workItem from="1621848231184" duration="2289000" />
       <workItem from="1622117677427" duration="2904000" />
-      <workItem from="1622168317629" duration="3309000" />
+      <workItem from="1622168317629" duration="4362000" />
+      <workItem from="1622538116120" duration="7937000" />
+      <workItem from="1622606375930" duration="1607000" />
+      <workItem from="1622614793684" duration="4151000" />
+      <workItem from="1622634541427" duration="872000" />
+      <workItem from="1622635460756" duration="3337000" />
+      <workItem from="1623031788025" duration="4687000" />
+      <workItem from="1623062129263" duration="7582000" />
+      <workItem from="1623120834011" duration="3389000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1619533580615</created>
@@ -432,7 +482,28 @@
       <option name="project" value="LOCAL" />
       <updated>1622118159275</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="业务线管理1.2">
+      <created>1622190984360</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1622190984360</updated>
+    </task>
+    <task id="LOCAL-00021" summary="业务线管理1.2">
+      <created>1622546076741</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1622546076741</updated>
+    </task>
+    <task id="LOCAL-00022" summary="业务线管理1.2">
+      <created>1622601386128</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1622601386128</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,6 +533,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="aa" />
     <MESSAGE value="服务端管理提交" />
     <MESSAGE value="服务端-搜索" />
@@ -471,7 +543,8 @@
     <MESSAGE value="业务线管理新增icon及页面跳转1.0" />
     <MESSAGE value="业务线管理新增icon及页面跳转1.2" />
     <MESSAGE value="业务线管理新增icon及页面跳转1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="业务线管理新增icon及页面跳转1.1" />
+    <MESSAGE value="业务线管理1.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="业务线管理1.2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="42" key="#Notifications" timestamp="1594219699671">
@@ -609,12 +682,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
-          <line>212</line>
+          <line>214</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
-          <line>160</line>
+          <line>162</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -624,13 +697,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
-          <line>150</line>
+          <line>152</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
@@ -641,6 +709,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
           <line>65</line>
           <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/dao/userinfoDao.java</url>
@@ -657,83 +745,5 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/tree$TreeApplication.ic" NAME="TreeApplication Coverage Results" MODIFIED="1619747982159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>tree:Web2 exploded</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>tree</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>lib</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

@@ -26,7 +26,7 @@ public interface projectinfoDao {
      * 根据Id删除该条数据
      * @param id
      */
-    public void delProById(int id);
+    public int delProById(int id);
 
     /**
      *

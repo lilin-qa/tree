@@ -162,9 +162,11 @@
             //console.log(obj)
             if(obj.event === 'del'){
                 layer.confirm('真的删除行么', function(index){
-                    location.href='/pro/delPro?id='+data.id
+                   location.href='/pro/delPro?id='+data.id
+                    console.log(index)
                     layer.close(index);
-                });
+                }
+               );
             } else if(obj.event === 'edit'){
                      location.href='/pro/addPro?id='+data.id
 

@@ -1,6 +1,7 @@
 package com.dt.tree.controller;
 
-import com.dt.tree.entity.businessinfo;
+import com.dt.tree.entity.Businessinfo;
+import com.dt.tree.entity.businessinfoPro;
 import com.dt.tree.entity.projectinfo;
 import com.dt.tree.services.businessinfoServicesImpl;
 import com.dt.tree.services.projectinfoServicesImpl;
@@ -31,7 +32,7 @@ public class businessinfoController {
 
     @RequestMapping(value="/getBusinessBySearch")
     @ResponseBody
-    public String  getBusinessBySearch(businessinfo bi, HttpServletRequest request, HttpServletResponse response) throws  Exception{
+    public String  getBusinessBySearch(businessinfoPro bi, HttpServletRequest request, HttpServletResponse response) throws  Exception{
         System.out.println("getBusinessBySearch");
         bi.setPage((bi.getPage()-1)*bi.getLimit());
         JSONArray jsonArray=new JSONArray();
@@ -39,13 +40,14 @@ public class businessinfoController {
 
 
             if (count>0){
-                List<businessinfo> busiList=biImpl.getBusiBy(bi);
+                List<businessinfoPro> busiList=biImpl.selectbusAndPro(bi);
 
                 for (int i=0;i<busiList.size();i++){
                     JSONObject jo=new JSONObject();
                     jo.put("busid",busiList.get(i).getBusid());
                     jo.put("busname",busiList.get(i).getBusname());
                     jo.put("isuse",busiList.get(i).getIsuse());
+                    jo.put("proName",busiList.get(i).getProjectname());
                     jsonArray.add(jo);
                 }
 
@@ -65,7 +67,7 @@ public class businessinfoController {
     @RequestMapping(value="/addBusi")
     public String addBusi( Integer busid,HttpServletRequest request, HttpServletResponse response)throws Exception{
         if (busid!=null){
-            businessinfo busi=  biImpl.getBusiById(busid);
+            Businessinfo busi=  biImpl.getBusiById(busid);
             System.out.println(busi);
             request.setAttribute("business",busi);
         }
@@ -75,17 +77,17 @@ public class businessinfoController {
         return "businessAdd";
     }
     @RequestMapping(value="/saveBusi")
-    public String saveBusi(businessinfo busi ,HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public String saveBusi(Businessinfo busi , HttpServletRequest request, HttpServletResponse response) throws Exception {
         if (busi.getIsuse()==null){
             busi.setIsuse("off");
         }
         if (busi.getBusid()==null){
-            busi.setCreate_time(getTime.getNowDate(new Date()));
+            busi.setCreateTime(getTime.getNowDate(new Date()));
             System.out.println(getTime.getNowDate(new Date()));
-            busi.setUpdate_time(getTime.getNowDate(new Date()));
+            busi.setUpdateTime(getTime.getNowDate(new Date()));
             biImpl.saveBusi(busi);
         }else {
-            busi.setUpdate_time(getTime.getNowDate(new Date()));
+            busi.setUpdateTime(getTime.getNowDate(new Date()));
             biImpl.editBusi(busi);
         }
         List<projectinfo> proList= piImpl.getProList();

@@ -88,8 +88,8 @@
 
                 ,{type: 'checkbox',  fixed: 'left'}
                 ,{field:'busid', title:'ID',  width:80, fixed: 'left', sort: true}
-                ,{field:'busname', title:'业务线名称', width:450, edit: 'text', sort: true}
-                ,{field:'busname', title:'所属服务', width:450, edit: 'text', sort: true}
+                ,{field:'busname', title:'业务线名称', width:250, edit: 'text', sort: true}
+                ,{field:'proName', title:'所属服务', width:250, edit: 'text', sort: true}
                 ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
                 ,{ title:'操作',  toolbar: '#barDemo' ,width:211}
             ]]
@@ -114,15 +114,7 @@
                 console.log(count);
                 $(".layui-table-box").find("[data-field='busid']").css("display","none");
 
-                $("[data-field='isuse']").children().each(function(){
 
-                    console.log(this)
-                    if($(this).text()=='1'){
-                        $(this).text("是")
-                    }else if($(this).text()=='0'){
-                        $(this).text("否")
-                    }
-                });
 
 
                 pageCurr=curr;
@@ -187,6 +179,7 @@
                     layer.close(index);
                 });
             } else if(obj.event === 'edit'){
+                console.log("busid:"+data.busid);
                 location.href='/busi/addBusi?busid='+data.busid
 
             }
