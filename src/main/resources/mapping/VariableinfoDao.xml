@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.tree.dao.VariableinfoDao">
+  <resultMap id="BaseResultMap" type="com.dt.tree.entity.Variableinfo">
+    <id column="varid" jdbcType="INTEGER" property="varid" />
+    <result column="varname" jdbcType="VARCHAR" property="varname" />
+    <result column="var_test" jdbcType="VARCHAR" property="varTest" />
+    <result column="var_online" jdbcType="VARCHAR" property="varOnline" />
+    <result column="isdelete" jdbcType="INTEGER" property="isdelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="expand" jdbcType="VARCHAR" property="expand" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    varid, varname, var_test, var_online, isdelete, create_time, update_time, expand
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from variableinfo
+    where varid = #{varid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from variableinfo
+    where varid = #{varid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="varid" keyProperty="varid" parameterType="com.dt.tree.entity.Variableinfo" useGeneratedKeys="true">
+    insert into variableinfo (varname, var_test, var_online, 
+      isdelete, create_time, update_time, 
+      expand)
+    values (#{varname,jdbcType=VARCHAR}, #{varTest,jdbcType=VARCHAR}, #{varOnline,jdbcType=VARCHAR}, 
+      #{isdelete,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{expand,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="varid" keyProperty="varid" parameterType="com.dt.tree.entity.Variableinfo" useGeneratedKeys="true">
+    insert into variableinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="varname != null">
+        varname,
+      </if>
+      <if test="varTest != null">
+        var_test,
+      </if>
+      <if test="varOnline != null">
+        var_online,
+      </if>
+      <if test="isdelete != null">
+        isdelete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="expand != null">
+        expand,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="varname != null">
+        #{varname,jdbcType=VARCHAR},
+      </if>
+      <if test="varTest != null">
+        #{varTest,jdbcType=VARCHAR},
+      </if>
+      <if test="varOnline != null">
+        #{varOnline,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null">
+        #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expand != null">
+        #{expand,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dt.tree.entity.Variableinfo">
+    update variableinfo
+    <set>
+      <if test="varname != null">
+        varname = #{varname,jdbcType=VARCHAR},
+      </if>
+      <if test="varTest != null">
+        var_test = #{varTest,jdbcType=VARCHAR},
+      </if>
+      <if test="varOnline != null">
+        var_online = #{varOnline,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null">
+        isdelete = #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expand != null">
+        expand = #{expand,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where varid = #{varid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dt.tree.entity.Variableinfo">
+    update variableinfo
+    set varname = #{varname,jdbcType=VARCHAR},
+      var_test = #{varTest,jdbcType=VARCHAR},
+      var_online = #{varOnline,jdbcType=VARCHAR},
+      isdelete = #{isdelete,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      expand = #{expand,jdbcType=VARCHAR}
+    where varid = #{varid,jdbcType=INTEGER}
+  </update>
+</mapper>

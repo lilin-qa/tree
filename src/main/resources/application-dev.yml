@@ -3,15 +3,18 @@ server:
 
 spring:
   datasource:
-    username: test
+    username: root
     password: 123456
-    url: jdbc:mysql://121.40.16.250:3306/tree?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/tree?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
    # driver-class-name:com.mysql.jdbc.Driver
     driver-class-name: com.mysql.jdbc.Driver
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+#logging:
+#  level:
+#    root: debug
       #页面热加载关闭
   thymeleaf:
     cache: false

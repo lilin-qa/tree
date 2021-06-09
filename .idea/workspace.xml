@@ -2,40 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/free-mybatis-generator-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/BusinessinfoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/Businessinfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfoPro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/BusinessinfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/VariableinfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/VariableinfoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/Variableinfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServicesImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/VariableinfoDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableAdd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableContent.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/free-mybatis-generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/free-mybatis-generator-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/businessinfoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/projectinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/projectinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/businessinfoServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/projectinfoServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/businessinfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/userinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/userinfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfoPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfoPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/BusinessinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/BusinessinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/business.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/business.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index1.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variable.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/tree.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/projectinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/businessinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/businessinfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/projectinfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/dao/projectinfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/businessinfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/entity/businessinfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServicesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/businessinfoServicesImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServicesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/services/projectinfoServicesImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/userinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/userinfoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapping/businessinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/businessinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tree.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tree.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -134,8 +132,8 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619705675155" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSP" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -144,8 +142,17 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\script\treegit\tree\src\main\resources\mapping" />
+      <recent name="D:\idea\tree\src\main\webapp" />
+      <recent name="D:\idea\tree\src\main\webapp\WEB-INF\views" />
+      <recent name="D:\idea\tree\src\main\webapp\WEB-INF" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.dt.tree" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dt.tree.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\script\treegit\tree\src\main\webapp\WEB-INF\views" />
@@ -153,14 +160,6 @@
       <recent name="D:\idea\tree\src\main\webapp" />
       <recent name="D:\idea\tree\lib" />
       <recent name="D:\idea\tree\src\main\java\com\dt\tree\util" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.dt.tree.controller" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\idea\tree\src\main\webapp" />
-      <recent name="D:\idea\tree\src\main\webapp\WEB-INF\views" />
-      <recent name="D:\idea\tree\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -243,7 +242,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@13b3fa82" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -347,7 +351,8 @@
       <workItem from="1622635460756" duration="3337000" />
       <workItem from="1623031788025" duration="4687000" />
       <workItem from="1623062129263" duration="7582000" />
-      <workItem from="1623120834011" duration="3389000" />
+      <workItem from="1623120834011" duration="19586000" />
+      <workItem from="1623209067081" duration="60000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1619533580615</created>
@@ -503,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622601386128</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="业务线管理2021/6/8">
+      <created>1623126447178</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1623126447178</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +556,8 @@
     <MESSAGE value="业务线管理新增icon及页面跳转1.2" />
     <MESSAGE value="业务线管理新增icon及页面跳转1.1" />
     <MESSAGE value="业务线管理1.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="业务线管理1.2" />
+    <MESSAGE value="业务线管理2021/6/8" />
+    <option name="LAST_COMMIT_MESSAGE" value="业务线管理2021/6/8" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="42" key="#Notifications" timestamp="1594219699671">
@@ -702,33 +715,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/projectinfoController.java</url>
           <line>98</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
-          <line>82</line>
+          <line>83</line>
           <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/dao/userinfoDao.java</url>

@@ -13,9 +13,9 @@
           <root url="file://$MODULE_DIR$/src/main/webapp/WEB-INF" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/lib" />
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/lib" />
         </sourceRoots>
       </configuration>
     </facet>

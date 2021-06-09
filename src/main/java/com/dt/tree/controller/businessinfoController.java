@@ -30,16 +30,17 @@ public class businessinfoController {
 
 
 
+
     @RequestMapping(value="/getBusinessBySearch")
     @ResponseBody
     public String  getBusinessBySearch(businessinfoPro bi, HttpServletRequest request, HttpServletResponse response) throws  Exception{
         System.out.println("getBusinessBySearch");
         bi.setPage((bi.getPage()-1)*bi.getLimit());
         JSONArray jsonArray=new JSONArray();
-        Integer count=biImpl.getCountBusi();
+       // Integer count=biImpl.getCountBusi();
 
 
-            if (count>0){
+
                 List<businessinfoPro> busiList=biImpl.selectbusAndPro(bi);
 
                 for (int i=0;i<busiList.size();i++){
@@ -51,7 +52,7 @@ public class businessinfoController {
                     jsonArray.add(jo);
                 }
 
-            }
+          //  }
             System.out.println(jsonArray);
 
 
@@ -59,7 +60,7 @@ public class businessinfoController {
         String  str="{\n" +
                 "  \"code\": 0\n" +
                 "  ,\"msg\": \"\"\n" +
-                "  ,\"count\": "+count+"\n" +
+                "  ,\"count\": "+busiList.size()+"\n" +
                 "  ,\"data\":   "+jsonArray.toString()+"\n" +"}";
         return str;
     }

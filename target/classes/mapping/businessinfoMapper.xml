@@ -18,7 +18,7 @@
     busid, busname, b.isuse, b.remarks, proid,b. isdelete, b.create_time, b.update_time,projectname,id
   </sql>
 
-  <select id="selectbusAndPro" parameterType="java.lang.Integer" resultType="com.dt.tree.entity.businessinfoPro">
+  <select id="selectbusAndPro" parameterType="com.dt.tree.entity.businessinfoPro" resultType="com.dt.tree.entity.businessinfoPro">
     select
     <include refid="busPro" />  from businessinfo  b
     INNER JOIN projectinfo p  on  b.proid=p.id
@@ -27,26 +27,27 @@
       and  busid = #{busid,jdbcType=INTEGER}
     </if>
     <if test="busname != null">
-      and busname = #{busname,jdbcType=VARCHAR},
+      and busname  like   concat('%',#{busname,jdbcType=VARCHAR},'%')
     </if>
     <if test="isuse != null">
-      and isuse = #{isuse,jdbcType=CHAR},
+      and b.isuse = #{isuse,jdbcType=CHAR}
     </if>
     <if test="remarks != null">
-      and remarks = #{remarks,jdbcType=VARCHAR},
+      and  b.remarks = #{remarks,jdbcType=VARCHAR}
     </if>
     <if test="proid != null">
-      and proid = #{proid,jdbcType=INTEGER},
+      and proid = #{proid,jdbcType=INTEGER}
     </if>
 
     <if test="createTime != null">
-      and create_time = #{createTime,jdbcType=TIMESTAMP},
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
     </if>
     <if test="updateTime != null">
-      and update_time = #{updateTime,jdbcType=TIMESTAMP},
+      and update_time = #{updateTime,jdbcType=TIMESTAMP}
     </if>
 
-    order by id limit #{page,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+
+    order by busid limit #{page,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
   </select>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -158,8 +159,33 @@
     where busid = #{busid,jdbcType=INTEGER}
   </update>
 
-  <select id="getCountBusi" resultType="int">
-        select COUNT(1)  from businessinfo where  isdelete=0
+  <select id="getCountBusi" resultType="int" parameterType="com.dt.tree.entity.businessinfoPro">
+    select
+    <include refid="busPro" />  from businessinfo  b
+    INNER JOIN projectinfo p  on  b.proid=p.id
+    where 1=1 and b.isdelete=0
+    <if test="busid != null">
+      and  busid = #{busid,jdbcType=INTEGER}
+    </if>
+    <if test="busname != null">
+      and busname  like   concat('%',#{busname,jdbcType=VARCHAR},'%')
+    </if>
+    <if test="isuse != null">
+      and b.isuse = #{isuse,jdbcType=CHAR}
+    </if>
+    <if test="remarks != null">
+      and  b.remarks = #{remarks,jdbcType=VARCHAR}
+    </if>
+    <if test="proid != null">
+      and proid = #{proid,jdbcType=INTEGER}
+    </if>
+
+    <if test="createTime != null">
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="updateTime != null">
+      and update_time = #{updateTime,jdbcType=TIMESTAMP}
+    </if>
 
     </select>
 

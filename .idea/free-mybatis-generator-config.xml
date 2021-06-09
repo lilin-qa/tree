@@ -27,6 +27,30 @@
             </Config>
           </value>
         </entry>
+        <entry key="variableinfo">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="VariableinfoDao" />
+              <option name="daoPackage" value="com.dt.tree.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Variableinfo" />
+              <option name="modelPackage" value="com.dt.tree.entity" />
+              <option name="name" value="variableinfo" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="varid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="variableinfo" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="Variableinfo" />
+            </Config>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

@@ -1,20 +1,16 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 10994
-  Date: 2020/8/20
-  Time: 17:41
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
     <base href="<%=basePath%>">
     <title>Title</title>
     <link rel="stylesheet" href="layui/css/layui.css">
 </head>
+<html>
 <body class="layui-layout-body ">
 <div class="layui-layout layui-layout-admin  ">
     <div class="layui-header">
@@ -29,22 +25,15 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">历史记录</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
+                    <a class="" href="/ind/sel">服务端管理</a>
 
-                    </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/goAddPro">项目</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>
+                    <a href="/ind/business">业务线管理</a>
+
                 </li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">发布商品</a></li>
+                <li class="layui-nav-item"><a href="/ind/variable">变量管理</a></li>
+                <li class="layui-nav-item"><a href="">测试工具</a></li>
             </ul>
         </div>
     </div>
@@ -52,7 +41,7 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;height: 100%;">
-            <iframe id="iframeLeft" scrolling="yes" style="width: 100%;height: 100%" name="iframeLeft" frameborder="0" src="<%=basePath%>/addPro"></iframe>
+            <iframe id="iframeLeft" scrolling="yes" style="width: 100%;height: 100%" name="iframeLeft" frameborder="0" src="<%=basePath%>/vari/variableContent"></iframe>
         </div>
     </div>
     <div class="layui-footer">

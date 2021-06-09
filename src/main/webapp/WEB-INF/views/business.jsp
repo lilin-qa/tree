@@ -32,7 +32,7 @@
                     <a href="/ind/business">业务线管理</a>
 
                 </li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
+                <li class="layui-nav-item"><a href="/ind/variable">变量管理</a></li>
                 <li class="layui-nav-item"><a href="">测试工具</a></li>
             </ul>
         </div>

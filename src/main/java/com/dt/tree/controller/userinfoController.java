@@ -58,12 +58,22 @@ public class userinfoController {
         return  "index1";
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping(value="/business")
     public String  business(HttpServletRequest request, HttpServletResponse response){
          return  "business";
     }
 
 
+    @RequestMapping(value="/variable")
+    public String  variable(HttpServletRequest request, HttpServletResponse response){
+        return  "variable";
+    }
     /**
      * 去新增项目页面
      * @param request
@@ -86,4 +96,7 @@ public class userinfoController {
 
         return "businessContent";
     }
+
+
+
 }
