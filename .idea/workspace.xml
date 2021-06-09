@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="679f4815-f12f-4269-b019-022b38901aa9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/VariableinfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/VariableinfoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/Variableinfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServicesImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/VariableinfoDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableAdd.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableContent.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/free-mybatis-generator-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/free-mybatis-generator-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/VariableinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/VariableinfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/userinfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/controller/userinfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfoPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/businessinfoPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/VariableinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/dao/VariableinfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/Variableinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/entity/Variableinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dt/tree/services/VariableinfoServicesImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/BusinessinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/BusinessinfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/business.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/business.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessContent.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/VariableinfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/VariableinfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/businessAdd.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index1.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variable.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/tree.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/projectAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableContent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/variableContent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/businessinfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/userinfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dt/tree/controller/userinfoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapping/businessinfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapping/businessinfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tree.iml" beforeDir="false" afterPath="$PROJECT_DIR$/tree.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +57,13 @@
         <item name="tree" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="tree: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tree" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tree: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="variableinfo: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -352,7 +345,7 @@
       <workItem from="1623031788025" duration="4687000" />
       <workItem from="1623062129263" duration="7582000" />
       <workItem from="1623120834011" duration="19586000" />
-      <workItem from="1623209067081" duration="60000" />
+      <workItem from="1623209067081" duration="13009000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <created>1619533580615</created>
@@ -515,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623126447178</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="变量管理2021/6/9-1">
+      <created>1623209193547</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1623209193547</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +557,8 @@
     <MESSAGE value="业务线管理新增icon及页面跳转1.1" />
     <MESSAGE value="业务线管理1.2" />
     <MESSAGE value="业务线管理2021/6/8" />
-    <option name="LAST_COMMIT_MESSAGE" value="业务线管理2021/6/8" />
+    <MESSAGE value="变量管理2021/6/9-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="变量管理2021/6/9-1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="42" key="#Notifications" timestamp="1594219699671">
@@ -720,8 +721,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/businessinfoController.java</url>
-          <line>83</line>
+          <line>80</line>
           <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/VariableinfoController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/VariableinfoController.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/controller/VariableinfoController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/dt/tree/dao/userinfoDao.java</url>

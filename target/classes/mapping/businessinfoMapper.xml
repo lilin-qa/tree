@@ -161,7 +161,7 @@
 
   <select id="getCountBusi" resultType="int" parameterType="com.dt.tree.entity.businessinfoPro">
     select
-    <include refid="busPro" />  from businessinfo  b
+    count(1)  from businessinfo  b
     INNER JOIN projectinfo p  on  b.proid=p.id
     where 1=1 and b.isdelete=0
     <if test="busid != null">

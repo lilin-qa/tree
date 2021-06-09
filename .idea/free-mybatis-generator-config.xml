@@ -47,7 +47,7 @@
               <option name="useLombokPlugin" value="true" />
               <option name="useSchemaPrefix" value="true" />
               <option name="xmlMvnPath" value="src/main/resources" />
-              <option name="xmlPackage" value="Variableinfo" />
+              <option name="xmlPackage" value="mapping" />
             </Config>
           </value>
         </entry>

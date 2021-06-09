@@ -25,7 +25,7 @@
 <body>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
     <c:if test = "${business.busid!=null}">
-        <legend>修改</legend>
+        <legend>编辑</legend>
     </c:if>
     <c:if test = "${business.busid==null}">
         <legend>新增</legend>

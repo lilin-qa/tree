@@ -16,8 +16,15 @@ public class Variableinfo implements Serializable {
 
     private String varTest;
 
+    private String varQa;
+
     private String varOnline;
 
+    private String varGray;
+
+    /**
+     * 0:未删除1：已删除
+     */
     private Integer isdelete;
 
     private Date createTime;
@@ -29,5 +36,27 @@ public class Variableinfo implements Serializable {
      */
     private String expand;
 
+    private String remark;
+
     private static final long serialVersionUID = 1L;
+
+    private int page;
+
+//    public int getPage() {
+//        return page;
+//    }
+//
+//    public void setPage(int page) {
+//        this.page = page;
+//    }
+//
+//    public int getLimit() {
+//        return limit;
+//    }
+//
+//    public void setLimit(int limit) {
+//        this.limit = limit;
+//    }
+
+    private int limit;
 }

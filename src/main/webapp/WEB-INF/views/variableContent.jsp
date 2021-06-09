@@ -22,7 +22,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">变量名称：  </label>
             <div class="layui-input-block">
-                <input type="text" name="busname" id="busname" lay-verify="title" autocomplete="off" placeholder="请输入变量名称" class="layui-input">
+                <input type="text" name="varname" id="varname" lay-verify="title" autocomplete="off" placeholder="请输入变量名称" class="layui-input">
             </div>
         </div>
 
@@ -67,22 +67,22 @@
         table.render({
 
             elem: '#test'
-            ,url:'/busi/getBusinessBySearch'
+            ,url:'/vari/getvariList'
             ,toolbar: '#toolbarDemo' //开启头具栏，并为其绑定左侧模板
             ,title: '业务线表'
             ,page: true
             ,  height : 480
             ,cols: [[
-
                 ,{type: 'checkbox',  fixed: 'left'}
-                ,{field:'busid', title:'ID',  width:80, sort: true}
-                ,{field:'busname', title:'业务线名称', width:250, edit: 'text'}
-                ,{field:'proName', title:'所属服务', width:250, edit: 'text'}
-                ,{field:'isuse', title:'是否启用', width:300, edit: 'text'}
-                ,{ title:'操作',  toolbar: '#barDemo' ,width:211}
+                ,{field:'varid', title:'ID', width:80,  sort: true}
+                // ,{field:'varid', title:'ID',  width:80, sort: true}
+                ,{field:'varname', title:'变量名称', width:350, edit: 'text'}
+                ,{field:'remark', title:'描述', width:350, edit: 'text'}
+                ,{ title:'操作',  toolbar: '#barDemo' ,width:230}
             ]]
                 ,parseData: function (res) {
-                    if(res.count ==  0 || res.count == null)
+                console.log(res)
+                    if(res.count ==  0 || res  == null)
                     {
                         return {
                             'code': 201, //接口状态
@@ -114,17 +114,17 @@
 
         var $ = layui.$, active = {
             reload: function(){
-                var proid = $('#proid');
-                var busname=$('#busname')
 
+                var varname=$('#varname')
+console.log(varname.val())
                 //执行重载
                 table.reload('testReload', {
                     page: {
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        proid:proid.val(),
-                        busname:busname.val()
+
+                        varname:varname.val()
                     }
                 }, 'data');
             }
@@ -137,38 +137,18 @@
             active[id] ? active[id].call(this) : '';
         });
 
-
-        //头工具栏事件
-        table.on('toolbar(test)', function(obj){
-            var checkStatus = table.checkStatus(obj.config.id);
-            switch(obj.event){
-                case 'getCheckLength':
-                    var data = checkStatus.data;
-                    layer.msg('选中了：'+ data.length + ' 个');
-                    break;
-                case 'isAll':
-                    layer.msg(checkStatus.isAll ? '全选': '未全选');
-                    break;
-
-                //自定义头工具栏右侧图标 - 提示
-                case 'LAYTABLE_TIPS':
-                    layer.alert('这是工具栏右侧自定义的一个图标按钮');
-                    break;
-            };
-        });
-
         //监听行工具事件
         table.on('tool(test)', function(obj){
             var data = obj.data;
             //console.log(obj)
             if(obj.event === 'del'){
                 layer.confirm('真的删除行么', function(index){
-                    location.href='/busi/delBusi?busid='+data.busid
+                    location.href='/vari/delVari?varid='+data.varid
                     layer.close(index);
                 });
             } else if(obj.event === 'edit'){
-                console.log("busid:"+data.busid);
-                location.href='/busi/addBusi?busid='+data.busid
+                console.log("varid:"+data.varid);
+                location.href='/vari/addVari?varid='+data.varid
 
             }
         });

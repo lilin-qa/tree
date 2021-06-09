@@ -37,10 +37,7 @@ public class businessinfoController {
         System.out.println("getBusinessBySearch");
         bi.setPage((bi.getPage()-1)*bi.getLimit());
         JSONArray jsonArray=new JSONArray();
-       // Integer count=biImpl.getCountBusi();
-
-
-
+       Integer count=biImpl.getCountBusi();
                 List<businessinfoPro> busiList=biImpl.selectbusAndPro(bi);
 
                 for (int i=0;i<busiList.size();i++){
@@ -60,7 +57,7 @@ public class businessinfoController {
         String  str="{\n" +
                 "  \"code\": 0\n" +
                 "  ,\"msg\": \"\"\n" +
-                "  ,\"count\": "+busiList.size()+"\n" +
+                "  ,\"count\": "+count+"\n" +
                 "  ,\"data\":   "+jsonArray.toString()+"\n" +"}";
         return str;
     }
