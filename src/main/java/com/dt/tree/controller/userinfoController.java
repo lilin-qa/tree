@@ -74,6 +74,11 @@ public class userinfoController {
     public String  variable(HttpServletRequest request, HttpServletResponse response){
         return  "variable";
     }
+    @RequestMapping(value="/interfacepage")
+    public String  interfacepage(HttpServletRequest request, HttpServletResponse response){
+        return  "interfacepage";
+    }
+
     /**
      * 去新增项目页面
      * @param request

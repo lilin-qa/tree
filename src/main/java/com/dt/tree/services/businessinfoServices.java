@@ -27,4 +27,6 @@ public interface businessinfoServices {
    public void delBusiById(Integer bid);
 
     public List<businessinfoPro> selectbusAndPro(businessinfoPro busPro);
+
+   List<Businessinfo> getbusiByproid(Integer proid);
 }

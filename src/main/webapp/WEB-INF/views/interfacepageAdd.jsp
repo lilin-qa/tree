@@ -35,13 +35,20 @@
 
 <div class="demoTable" style="padding-left: 29px;">
     <form class="layui-form layui-form-pane" action="/vari/saveVar">
-        <div class="layui-form-item">
-            <label class="layui-form-label"  style="background-color: #e2e2e2;">变量名</label>
+        <div class="layui-form-item ">
+            <label class="layui-form-label">所属服务端：  </label>
             <div class="layui-input-block">
-                <input type="text" name="varname" lay-verify="required"  value="${variable.varname}" style="width: 70%;" autocomplete="off" placeholder="请输入变量名" class="layui-input">
-                <input type="hidden" name="varid" value="${variable.varid}">
+                <select  id="proids" class="selects" name="proid"  lay-filter="one_cate">
+                    <option value="0" class="changeItem">请选择服务端名称</option>
+                    <c:forEach items="${prolist}" var="plist"  varStatus="p">
+                        <option value="${plist.id}">${plist.projectname}</option>
+                    </c:forEach>
+                </select>
+
+
             </div>
         </div>
+
         <div class="layui-form-item">
             <label class="layui-form-label"  style="background-color: #e2e2e2;">描述信息</label>
             <div class="layui-input-block">

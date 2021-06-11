@@ -27,6 +27,54 @@
             </Config>
           </value>
         </entry>
+        <entry key="interfaceinfo">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="InterfaceinfoDao" />
+              <option name="daoPackage" value="com.dt.tree.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Interfaceinfo" />
+              <option name="modelPackage" value="com.dt.tree.entity" />
+              <option name="name" value="interfaceinfo" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="interfaceid" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="interfaceinfo" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mapping" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="parameterformat">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ParameterformatDao" />
+              <option name="daoPackage" value="com.dt.tree.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Parameterformat" />
+              <option name="modelPackage" value="com.dt.tree.entity" />
+              <option name="name" value="parameterformat" />
+              <option name="overrideJava" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="parameterformat" />
+              <option name="useLombokPlugin" value="true" />
+              <option name="useSchemaPrefix" value="true" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="Mapping" />
+            </Config>
+          </value>
+        </entry>
         <entry key="variableinfo">
           <value>
             <Config>

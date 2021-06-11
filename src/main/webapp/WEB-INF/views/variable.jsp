@@ -33,7 +33,7 @@
 
                 </li>
                 <li class="layui-nav-item"><a href="/ind/variable">变量管理</a></li>
-                <li class="layui-nav-item"><a href="">测试工具</a></li>
+                <li class="layui-nav-item"><a href="/ind/interfacepage">接口管理</a></li>
             </ul>
         </div>
     </div>

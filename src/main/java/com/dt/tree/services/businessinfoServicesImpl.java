@@ -46,4 +46,9 @@ public class businessinfoServicesImpl implements businessinfoServices  {
     public List<businessinfoPro> selectbusAndPro(businessinfoPro busPro) {
         return bidao.selectbusAndPro(busPro);
     }
+
+    @Override
+    public List<Businessinfo> getbusiByproid(Integer proid) {
+        return bidao.selectByProid(proid);
+    }
 }

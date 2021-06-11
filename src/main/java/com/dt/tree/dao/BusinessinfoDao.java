@@ -21,4 +21,10 @@ public interface BusinessinfoDao {
      List<businessinfoPro> selectbusAndPro(businessinfoPro busPro);
     int getCountBusi();
 
+    /**
+     * 根据proid查询业务线名称
+     * @param proid
+     * @return
+     */
+    List<Businessinfo> selectByProid(Integer proid);
 }

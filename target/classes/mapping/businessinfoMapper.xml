@@ -56,6 +56,15 @@
     from businessinfo
     where busid = #{busid,jdbcType=INTEGER}
   </select>
+
+  <select id="selectByProid" parameterType="java.lang.Integer" resultType="com.dt.tree.entity.Businessinfo">
+    select
+    <include refid="Base_Column_List" />
+    from businessinfo
+    where proid = #{proid,jdbcType=INTEGER}
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
      update businessinfo
     set
@@ -188,5 +197,7 @@
     </if>
 
     </select>
+
+
 
 </mapper>
