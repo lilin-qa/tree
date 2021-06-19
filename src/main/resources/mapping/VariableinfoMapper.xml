@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.tree.dao.VariableinfoDao">
+  <resultMap id="BaseResultMap" type="com.dt.tree.entity.Variableinfo">
+    <id column="varid" jdbcType="INTEGER" property="varid" />
+    <result column="varname" jdbcType="VARCHAR" property="varname" />
+    <result column="var_test" jdbcType="VARCHAR" property="varTest" />
+    <result column="var_qa" jdbcType="VARCHAR" property="varQa" />
+    <result column="var_online" jdbcType="VARCHAR" property="varOnline" />
+    <result column="var_gray" jdbcType="VARCHAR" property="varGray" />
+    <result column="isdelete" jdbcType="INTEGER" property="isdelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="expand" jdbcType="VARCHAR" property="expand" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    varid, varname, var_test, var_qa, var_online, var_gray, isdelete, create_time, update_time,
+    expand, remark
+  </sql>
+  <select id="selectByVarid" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from variableinfo
+    where varid = #{varid,jdbcType=INTEGER}
+  </select>
+
+  <select id="getvariList" parameterType="com.dt.tree.entity.Variableinfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from variableinfo
+    where  isdelete=0
+    <if test="varname != null">
+     and   varname like concat('%',#{varname,jdbcType=VARCHAR},'%')
+    </if>
+    order by varid  limit #{page,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+  </select>
+
+  <select id="getCountvariList" parameterType="com.dt.tree.entity.Variableinfo" resultType="int">
+    select count(1)
+    from variableinfo
+    where  isdelete=0
+    <if test="varname != null">
+      and   varname like concat('%',#{varname,jdbcType=VARCHAR},'%')
+    </if>
+  </select>
+
+  <delete id="deleteByVarid"  parameterType="java.lang.Integer" >
+    update variableinfo
+    set isdelete=1,
+     update_time=now()
+    where varid = #{varid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertVar" keyColumn="varid" keyProperty="varid" parameterType="com.dt.tree.entity.Variableinfo" useGeneratedKeys="true">
+    insert into variableinfo (varname, var_test, var_qa,
+      var_online, var_gray, isdelete,
+      create_time, update_time, expand,
+      remark)
+    values (#{varname,jdbcType=VARCHAR}, #{varTest,jdbcType=VARCHAR}, #{varQa,jdbcType=VARCHAR},
+      #{varOnline,jdbcType=VARCHAR}, #{varGray,jdbcType=VARCHAR}, 0,
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{expand,jdbcType=VARCHAR},
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+
+  <update id="updateByVarid" parameterType="com.dt.tree.entity.Variableinfo">
+    update variableinfo
+    <set>
+      <if test="varname != null">
+        varname = #{varname,jdbcType=VARCHAR},
+      </if>
+      <if test="varTest != null">
+        var_test = #{varTest,jdbcType=VARCHAR},
+      </if>
+      <if test="varQa != null">
+        var_qa = #{varQa,jdbcType=VARCHAR},
+      </if>
+      <if test="varOnline != null">
+        var_online = #{varOnline,jdbcType=VARCHAR},
+      </if>
+      <if test="varGray != null">
+        var_gray = #{varGray,jdbcType=VARCHAR},
+      </if>
+
+        isdelete = 0,
+
+      <if test="updateTime != null">
+        update_time = NOW(),
+      </if>
+      <if test="expand != null">
+        expand = #{expand,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where varid = #{varid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dt.tree.entity.Variableinfo">
+    update variableinfo
+    set varname = #{varname,jdbcType=VARCHAR},
+      var_test = #{varTest,jdbcType=VARCHAR},
+      var_qa = #{varQa,jdbcType=VARCHAR},
+      var_online = #{varOnline,jdbcType=VARCHAR},
+      var_gray = #{varGray,jdbcType=VARCHAR},
+      isdelete = #{isdelete,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      expand = #{expand,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where varid = #{varid,jdbcType=INTEGER}
+  </update>
+</mapper>

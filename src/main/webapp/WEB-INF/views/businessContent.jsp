@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 10994
-  Date: 2020/8/20
-  Time: 17:41
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -23,12 +17,12 @@
 <table class="layui-hide" id="test" lay-filter="test"></table>
 
 <script type="text/html" id="toolbarDemo">
-    <form class="layui-form" action="/pro/getBusinessBySearch">
+    <div class="demoTable">
         <div class="layui-form-item" style="margin-bottom:0px">
             <label class="layui-form-label">服务端名称：   </label>
             <div class="layui-input-block">
-                <select name="proid" lay-filter="aihao" lay-search>
-                       <option value="0">请选择服务端名称</option>
+                <select  id="proid" name="proid" lay-filter="aihao" lay-search="">
+                       <option value="">请选择服务端名称</option>
                      <c:forEach items="${prolist}" var="plist"  varStatus="p">
                          <option value="${plist.id}">${plist.projectname}</option>
                      </c:forEach>
@@ -40,31 +34,34 @@
         <div class="layui-form-item">
             <label class="layui-form-label">业务线名称：  </label>
             <div class="layui-input-block">
-                <input type="text" name="businessName" lay-verify="title" autocomplete="off" placeholder="请输入业务线名称" class="layui-input">
+                <input type="text" name="busname" id="busname" lay-verify="title" autocomplete="off" placeholder="请输入业务线名称" class="layui-input">
             </div>
         </div>
 
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1"><i class="layui-icon">&#xe615;</i>搜索 </button>
-                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <button type="button" class="layui-btn layui-btn-sm" data-type="reload" lay-filter="demo1"><i class="layui-icon">&#xe615;</i>搜索 </button>
+                <button class="layui-btn layui-btn-sm" lay-event="getCheckData" onclick=window.location.href='/busi/addBusi'>
+                    <i class="layui-icon">&#xe608;</i>新增
+
+                </button>
             </div>
         </div>
-    </form>
-
-
-
-
 
 
     </div>
+
+
+
+
+
 
 
 </script>
 
 <script type="text/html" id="barDemo">
 
-    <a class="layui-btn layui-btn-xs" lay-event="edit" ><i class="layui-icon">&#xe642;</i>编辑111111111</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit" ><i class="layui-icon">&#xe642;</i>编辑</a>
 
 
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"> <i class="layui-icon">&#xe640;</i>删除</a>
@@ -73,7 +70,7 @@
 
 <script src="layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
-
+<script src="js/jquery-3.5.1.js" charset="utf-8"></script>
 <script>
     layui.use('table', function(){
 
@@ -82,22 +79,46 @@
         table.render({
 
             elem: '#test'
-            ,url:'/pro/getBusinessBySearch'
+            ,url:'/busi/getBusinessBySearch'
             ,toolbar: '#toolbarDemo' //开启头具栏，并为其绑定左侧模板
-            // ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
-            //     title: '提示'
-            //     ,layEvent: 'LAYTABLE_TIPS'
-            //     ,icon: 'layui-icon-tips'
-            // }]
-            ,title: '用户数据表'
+            ,title: '业务线表'
             ,page: true
+            ,  height : 480
             ,cols: [[
-                {type: 'checkbox', fixed: 'left'}
-                ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
-                ,{field:'username', title:'名称', width:450, edit: 'text', sort: true}
-                ,{field:'isuser', title:'是否启用', width:300, edit: 'text', sort: true}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+
+                ,{type: 'checkbox',  fixed: 'left'}
+                ,{field:'busid', title:'ID',  width:80, sort: true}
+                ,{field:'busname', title:'业务线名称', width:250, edit: 'text'}
+                ,{field:'proName', title:'所属服务', width:250, edit: 'text'}
+                ,{field:'isuse', title:'是否启用', width:300, edit: 'text'}
+                ,{ title:'操作',  toolbar: '#barDemo' ,width:211}
             ]]
+                ,parseData: function (res) {
+                    if(res.count ==  0 || res.count == null)
+                    {
+                        return {
+                            'code': 201, //接口状态
+                            'msg': '暂无数据', //提示文本
+                            'count': 0, //数据长度
+                            'data': [] //数据列表，是直接填充进表格中的数组
+                        }
+                    }
+                }
+            ,done: function(res, curr, count){
+                //如果是异步请求数据方式，res即为你接口返回的信息。
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                console.log(res);
+                //得到当前页码
+                console.log(curr);
+                //得到数据总量
+                console.log(count);
+                $(".layui-table-box").find("[data-field='busid']").css("display","none");
+
+
+
+
+                pageCurr=curr;
+            }
             ,id: 'testReload'
         });
 
@@ -105,7 +126,8 @@
 
         var $ = layui.$, active = {
             reload: function(){
-                var demoReload = $('#demoReload');
+                var proid = $('#proid');
+                var busname=$('#busname')
 
                 //执行重载
                 table.reload('testReload', {
@@ -113,17 +135,18 @@
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        key: {
-                            id: demoReload.val()
-                        }
+                        proid:proid.val(),
+                        busname:busname.val()
                     }
                 }, 'data');
             }
         };
 
-        $('.demoTable .layui-btn').on('click', function(){
-            var type = $(this).data('type');
-            active[type] ? active[type].call(this) : '';
+        $('body').on('click', '.demoTable  .layui-form-item .layui-btn',function() {
+            console.log(this)
+            var id = $(this).data('type');
+            console.log(id)
+            active[id] ? active[id].call(this) : '';
         });
 
 
@@ -152,11 +175,12 @@
             //console.log(obj)
             if(obj.event === 'del'){
                 layer.confirm('真的删除行么', function(index){
-                    location.href='/pro/delPro?id='+data.id
+                    location.href='/busi/delBusi?busid='+data.busid
                     layer.close(index);
                 });
             } else if(obj.event === 'edit'){
-                location.href='/pro/addPro?id='+data.id
+                console.log("busid:"+data.busid);
+                location.href='/busi/addBusi?busid='+data.busid
 
             }
         });

@@ -26,7 +26,7 @@
     </style>
 <body>
 <div>
-    <iframe id="iframeTop" name="iframeTop" frameborder="0" src="https://www.baidu.com/"></iframe>
+    <iframe id="iframeTop" name="iframeTop" frameborder="0" src="https://www.baidu.com/">22222</iframe>
     <iframe id="iframeLeft" name="iframeLeft" frameborder="0" src="<%=basePath%>/index"></iframe>
     <iframe id="iframeContent" name="iframeContent" frameborder="0" src="https://www.baidu.com/"></iframe>
 </div>

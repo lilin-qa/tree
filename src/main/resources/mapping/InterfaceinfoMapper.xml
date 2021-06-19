@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.tree.dao.InterfaceinfoDao">
+    <resultMap id="BaseResultMap" type="com.dt.tree.entity.Interfaceinfo">
+        <id column="interfaceid" jdbcType="INTEGER" property="interfaceid" />
+        <result column="interfacename" jdbcType="VARCHAR" property="interfacename" />
+        <result column="method" jdbcType="INTEGER" property="method" />
+        <result column="varid" jdbcType="INTEGER" property="varid" />
+        <result column="interurl" jdbcType="VARCHAR" property="interurl" />
+        <result column="paramformat" jdbcType="VARCHAR" property="paramformat" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+        <result column="interface_hearder" jdbcType="VARCHAR" property="interfaceHearder" />
+        <result column="interface_param" jdbcType="VARCHAR" property="interfaceParam" />
+        <result column="interface_to_proid" jdbcType="INTEGER" property="interfaceToProid" />
+        <result column="interface_to_busid" jdbcType="INTEGER" property="interfaceToBusid" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="expland" jdbcType="VARCHAR" property="expland" />
+        <result column="isdelete" jdbcType="INTEGER" property="isdelete" />
+
+    </resultMap>
+    <sql id="Base_Column_List">
+    interfaceid, interfacename, `method`, varid, interurl, paramformat, `status`, remark,
+    interface_hearder, interface_param, interface_to_proid, interface_to_busid, create_time,
+    update_time, expland, isdelete,interface_to_varid
+  </sql>
+
+    <sql id="interface_pro_busi">
+  interfaceid, interfacename, `method`, i.varid, interurl, paramformat, `status`, i.remark,
+    interface_hearder, interface_param, interface_to_proid, interface_to_busid, i.create_time,
+    i.update_time, i.expland,projectName,busname,v.varname
+</sql>
+
+    <select id="getinterList" parameterType="com.dt.tree.entity.InterfaceinfoProBusi" resultType="com.dt.tree.entity.InterfaceinfoProBusi">
+        select
+        <include refid="interface_pro_busi" />
+        from interfaceinfo i
+        LEFT JOIN projectinfo p on interface_to_proid = p.id
+        LEFT JOIN businessinfo b on interface_to_busid=b.busid
+        LEFT JOIN variableinfo  v on v.varid=i.varid
+        where   i.isdelete =0
+        <if test="interfaceToProid != null">
+           and  interface_to_proid=#{interfaceToProid,jdbcType=INTEGER}
+        </if>
+        <if test="interfaceToBusid != null">
+            and  interface_to_busid=#{interfaceToBusid,jdbcType=INTEGER}
+        </if>
+        <if test="interfacename != null">
+            and  interfacename like concat('%',#{interfacename,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="varname != null">
+            and  varname like concat('%',#{varname,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="interurl != null">
+            and  interurl like concat('%',#{interurl,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="interfaceid != null">
+            and  interfaceid  = #{interfaceid,jdbcType=INTEGER}
+        </if>
+        order by interfaceid limit #{page,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+    </select>
+    <select id="getCountinterList" parameterType="com.dt.tree.entity.InterfaceinfoProBusi" resultType="int">
+        select
+       count(1)
+        from interfaceinfo i
+        LEFT JOIN projectinfo p on interface_to_proid = p.id
+        LEFT JOIN businessinfo b on interface_to_busid=b.busid
+        LEFT JOIN variableinfo  v on v.varid=i.varid
+        where   i.isdelete =0
+        <if test="interfaceToProid != null">
+            and  interface_to_proid=#{interfaceToProid,jdbcType=INTEGER}
+        </if>
+        <if test="interfaceToBusid != null">
+            and  interface_to_busid=#{interfaceToBusid,jdbcType=INTEGER}
+        </if>
+        <if test="interfacename != null">
+            and  interfacename like concat('%',#{interfacename,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="varname != null">
+            and  varname like concat('%',#{varname,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="interurl != null">
+            and  interurl like concat('%',#{interurl,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="interfaceid != null">
+            and  interfaceid  = #{interfaceid,jdbcType=INTEGER}
+        </if>
+
+    </select>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from interfaceinfo
+        where interfaceid = #{interfaceid,jdbcType=INTEGER}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from interfaceinfo
+    where interfaceid = #{interfaceid,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" keyColumn="interfaceid" keyProperty="interfaceid" parameterType="com.dt.tree.entity.Interfaceinfo" useGeneratedKeys="true">
+    insert into interfaceinfo (interfacename, `method`, varid,
+      interurl, paramformat, `status`,
+      remark, interface_hearder, interface_param,
+      interface_to_proid, interface_to_busid, create_time,
+      update_time, expland, isdelete
+      )
+    values (#{interfacename,jdbcType=VARCHAR}, #{method,jdbcType=INTEGER}, #{varid,jdbcType=INTEGER},
+      #{interurl,jdbcType=VARCHAR}, #{paramformat,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+      #{remark,jdbcType=VARCHAR}, #{interfaceHearder,jdbcType=VARCHAR}, #{interfaceParam,jdbcType=VARCHAR},
+      #{interfaceToProid,jdbcType=INTEGER}, #{interfaceToBusid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+      #{updateTime,jdbcType=TIMESTAMP}, #{expland,jdbcType=VARCHAR}, #{isdelete,jdbcType=INTEGER}
+      )
+  </insert>
+    <insert id="insertSelective" keyColumn="interfaceid" keyProperty="interfaceid" parameterType="com.dt.tree.entity.Interfaceinfo" useGeneratedKeys="true">
+        insert into interfaceinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="interfacename != null">
+                interfacename,
+            </if>
+            <if test="method != null">
+                `method`,
+            </if>
+            <if test="varid != null">
+                varid,
+            </if>
+            <if test="interurl != null">
+                interurl,
+            </if>
+            <if test="paramformat != null">
+                paramformat,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="interfaceHearder != null">
+                interface_hearder,
+            </if>
+            <if test="interfaceParam != null">
+                interface_param,
+            </if>
+            <if test="interfaceToProid != null">
+                interface_to_proid,
+            </if>
+            <if test="interfaceToBusid != null">
+                interface_to_busid,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="expland != null">
+                expland,
+            </if>
+            <if test="isdelete != null">
+                isdelete,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="interfacename != null">
+                #{interfacename,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                #{method,jdbcType=INTEGER},
+            </if>
+            <if test="varid != null">
+                #{varid,jdbcType=INTEGER},
+            </if>
+            <if test="interurl != null">
+                #{interurl,jdbcType=VARCHAR},
+            </if>
+            <if test="paramformat != null">
+                #{paramformat,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="interfaceHearder != null">
+                #{interfaceHearder,jdbcType=VARCHAR},
+            </if>
+            <if test="interfaceParam != null">
+                #{interfaceParam,jdbcType=VARCHAR},
+            </if>
+            <if test="interfaceToProid != null">
+                #{interfaceToProid,jdbcType=INTEGER},
+            </if>
+            <if test="interfaceToBusid != null">
+                #{interfaceToBusid,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expland != null">
+                #{expland,jdbcType=VARCHAR},
+            </if>
+            <if test="isdelete != null">
+                #{isdelete,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.dt.tree.entity.Interfaceinfo">
+        update interfaceinfo
+        <set>
+            <if test="interfacename != null">
+                interfacename = #{interfacename,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                `method` = #{method,jdbcType=INTEGER},
+            </if>
+            <if test="varid != null">
+                varid = #{varid,jdbcType=INTEGER},
+            </if>
+            <if test="interurl != null">
+                interurl = #{interurl,jdbcType=VARCHAR},
+            </if>
+            <if test="paramformat != null">
+                paramformat = #{paramformat,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="interfaceHearder != null">
+                interface_hearder = #{interfaceHearder,jdbcType=VARCHAR},
+            </if>
+            <if test="interfaceParam != null">
+                interface_param = #{interfaceParam,jdbcType=VARCHAR},
+            </if>
+            <if test="interfaceToProid != null">
+                interface_to_proid = #{interfaceToProid,jdbcType=INTEGER},
+            </if>
+            <if test="interfaceToBusid != null">
+                interface_to_busid = #{interfaceToBusid,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="expland != null">
+                expland = #{expland,jdbcType=VARCHAR},
+            </if>
+            <if test="isdelete != null">
+                isdelete = #{isdelete,jdbcType=INTEGER},
+            </if>
+        </set>
+        where interfaceid = #{interfaceid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.dt.tree.entity.Interfaceinfo">
+    update interfaceinfo
+    set interfacename = #{interfacename,jdbcType=VARCHAR},
+      `method` = #{method,jdbcType=INTEGER},
+      varid = #{varid,jdbcType=INTEGER},
+      interurl = #{interurl,jdbcType=VARCHAR},
+      paramformat = #{paramformat,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      interface_hearder = #{interfaceHearder,jdbcType=VARCHAR},
+      interface_param = #{interfaceParam,jdbcType=VARCHAR},
+      interface_to_proid = #{interfaceToProid,jdbcType=INTEGER},
+      interface_to_busid = #{interfaceToBusid,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      expland = #{expland,jdbcType=VARCHAR},
+      isdelete = #{isdelete,jdbcType=INTEGER}
+    where interfaceid = #{interfaceid,jdbcType=INTEGER}
+  </update>
+</mapper>

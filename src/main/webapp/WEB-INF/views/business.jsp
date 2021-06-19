@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 10994
-  Date: 2020/8/20
-  Time: 17:41
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -38,8 +32,8 @@
                     <a href="/ind/business">业务线管理</a>
 
                 </li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">测试工具</a></li>
+                <li class="layui-nav-item"><a href="/ind/variable">变量管理</a></li>
+                <li class="layui-nav-item"><a href="/ind/interfacepage">接口管理</a></li>
             </ul>
         </div>
     </div>

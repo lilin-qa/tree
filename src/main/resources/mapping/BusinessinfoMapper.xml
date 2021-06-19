@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.tree.dao.BusinessinfoDao">
+  <resultMap id="BaseResultMap" type="com.dt.tree.entity.Businessinfo">
+    <id column="busid" jdbcType="INTEGER" property="busid" />
+    <result column="busname" jdbcType="VARCHAR" property="busname" />
+    <result column="isuse" jdbcType="CHAR" property="isuse" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="proid" jdbcType="INTEGER" property="proid" />
+    <result column="isdelete" jdbcType="INTEGER" property="isdelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    busid, busname, isuse, remarks, proid, isdelete, create_time, update_time
+  </sql>
+  <sql id="busPro">
+    busid, busname, b.isuse, b.remarks, proid,b. isdelete, b.create_time, b.update_time,projectname,id
+  </sql>
+
+  <select id="selectbusAndPro" parameterType="com.dt.tree.entity.businessinfoPro" resultType="com.dt.tree.entity.businessinfoPro">
+    select
+    <include refid="busPro" />  from businessinfo  b
+    INNER JOIN projectinfo p  on  b.proid=p.id
+    where 1=1 and b.isdelete=0
+    <if test="busid != null">
+      and  busid = #{busid,jdbcType=INTEGER}
+    </if>
+    <if test="busname != null">
+      and busname  like   concat('%',#{busname,jdbcType=VARCHAR},'%')
+    </if>
+    <if test="isuse != null">
+      and b.isuse = #{isuse,jdbcType=CHAR}
+    </if>
+    <if test="remarks != null">
+      and  b.remarks = #{remarks,jdbcType=VARCHAR}
+    </if>
+    <if test="proid != null">
+      and proid = #{proid,jdbcType=INTEGER}
+    </if>
+
+    <if test="createTime != null">
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="updateTime != null">
+      and update_time = #{updateTime,jdbcType=TIMESTAMP}
+    </if>
+
+
+    order by busid limit #{page,jdbcType=INTEGER},#{limit,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from businessinfo
+    where busid = #{busid,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectByProid" parameterType="java.lang.Integer" resultType="com.dt.tree.entity.Businessinfo">
+    select
+    <include refid="Base_Column_List" />
+    from businessinfo
+    where proid = #{proid,jdbcType=INTEGER}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+     update businessinfo
+    set
+      isdelete =1,
+      update_time =NOW()
+    where busid = #{busid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dt.tree.entity.Businessinfo" useGeneratedKeys="true">
+    insert into businessinfo (busname, isuse, remarks, 
+      proid, isdelete, create_time, 
+      update_time)
+    values (#{busname,jdbcType=VARCHAR}, #{isuse,jdbcType=CHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{proid,jdbcType=INTEGER}, 0, #{createTime,jdbcType=TIMESTAMP},
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="busid" keyProperty="busid" parameterType="com.dt.tree.entity.Businessinfo" useGeneratedKeys="true">
+    insert into businessinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="busname != null">
+        busname,
+      </if>
+      <if test="isuse != null">
+        isuse,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="proid != null">
+        proid,
+      </if>
+      <if test="isdelete != null">
+        isdelete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="busname != null">
+        #{busname,jdbcType=VARCHAR},
+      </if>
+      <if test="isuse != null">
+        #{isuse,jdbcType=CHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="proid != null">
+        #{proid,jdbcType=INTEGER},
+      </if>
+      <if test="isdelete != null">
+       0
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dt.tree.entity.Businessinfo">
+    update businessinfo
+    <set>
+      <if test="busname != null">
+        busname = #{busname,jdbcType=VARCHAR},
+      </if>
+      <if test="isuse != null">
+        isuse = #{isuse,jdbcType=CHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="proid != null">
+        proid = #{proid,jdbcType=INTEGER},
+      </if>
+      <if test="isdelete != null">
+        isdelete = #{isdelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where busid = #{busid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dt.tree.entity.Businessinfo">
+    update businessinfo
+    set busname = #{busname,jdbcType=VARCHAR},
+      isuse = #{isuse,jdbcType=CHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      proid = #{proid,jdbcType=INTEGER},
+      isdelete =0,
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where busid = #{busid,jdbcType=INTEGER}
+  </update>
+
+  <select id="getCountBusi" resultType="int" parameterType="com.dt.tree.entity.businessinfoPro">
+    select
+    count(1)  from businessinfo  b
+    INNER JOIN projectinfo p  on  b.proid=p.id
+    where 1=1 and b.isdelete=0
+    <if test="busid != null">
+      and  busid = #{busid,jdbcType=INTEGER}
+    </if>
+    <if test="busname != null">
+      and busname  like   concat('%',#{busname,jdbcType=VARCHAR},'%')
+    </if>
+    <if test="isuse != null">
+      and b.isuse = #{isuse,jdbcType=CHAR}
+    </if>
+    <if test="remarks != null">
+      and  b.remarks = #{remarks,jdbcType=VARCHAR}
+    </if>
+    <if test="proid != null">
+      and proid = #{proid,jdbcType=INTEGER}
+    </if>
+
+    <if test="createTime != null">
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="updateTime != null">
+      and update_time = #{updateTime,jdbcType=TIMESTAMP}
+    </if>
+
+    </select>
+
+
+
+</mapper>

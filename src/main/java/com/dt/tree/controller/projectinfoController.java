@@ -4,6 +4,7 @@ import com.dt.tree.entity.projectinfo;
 import com.dt.tree.services.projectinfoServices;
 import com.dt.tree.services.projectinfoServicesImpl;
 
+import com.dt.tree.util.getTime;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
@@ -30,16 +32,19 @@ public class projectinfoController {
 
     @RequestMapping(value="/getList")
     @ResponseBody
-    public String  getList(projectinfo pi,HttpServletRequest request, HttpServletResponse response){
+    public String  getList(projectinfo pi,HttpServletRequest request, HttpServletResponse response) throws  Exception{
        System.out.println("ssss");
-       String projectname= request.getParameter("pname");
+       pi.setPage((pi.getPage()-1)*pi.getLimit());
        List<projectinfo> proList=piImpl.getProBy(pi);
+       //总数
+        Integer count=piImpl.getCountPro();
        JSONArray jsonArray=new JSONArray();
        for (int i=0;i<proList.size();i++){
            JSONObject jo=new JSONObject();
            jo.put("id",proList.get(i).getId());
            jo.put("projectname",proList.get(i).getProjectname());
            jo.put("isuse",proList.get(i).getIsuse());
+           jo.put("createTime",getTime.getNowDateString(proList.get(i).getCreate_time()));
            jsonArray.add(jo);
        }
        System.out.println(jsonArray);
@@ -47,22 +52,9 @@ public class projectinfoController {
 
            str="{\n" +
                   "  \"code\": 0\n" +
-                  "  ,\"msg\": \"SUCCESS\"\n" +
-                  "  ,\"count\": "+proList.size()+"\n" +
-                  "  ,\"data\": [{\n" +
-                  "    \"id\": \"1\"\n" +
-                  "    ,\"projectname\": \"杜ddddd甫\"\n" +
-                  "    ,\"email\": \"xianxin@layui.com\"\n" +
-                  "    ,\"sex\": \"男\"\n" +
-                  "    ,\"city\": \"浙江杭州\"\n" +
-                  "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
-                  "    ,\"experience\": \"7\"\n" +
-                  "    ,\"ip\": \"192.168.0.8\"\n" +
-                  "    ,\"logins\": null\n" +
-                  "    ,\"joinTime\": \"2016-10-14\"\n" +
-                  "  }\n" +
-                  "]\n" +
-                  "}";
+                  "  ,\"msg\": \"success\"\n" +
+                  "  ,\"count\": "+count+"\n" +
+                  "  ,\"data\":   "+jsonArray.toString()+"\n" +"}";
 
 
        return str;
@@ -70,9 +62,10 @@ public class projectinfoController {
 
 
     @RequestMapping(value="/addPro")
-    public String addPro( Integer id,HttpServletRequest request, HttpServletResponse response){
+    public String addPro( Integer id,HttpServletRequest request, HttpServletResponse response)throws Exception{
         if (id!=null){
             projectinfo pi=  piImpl.getProById(id);
+            System.out.println(pi);
              request.setAttribute("projectinfo",pi);
         }
 
@@ -81,48 +74,35 @@ public class projectinfoController {
 
     @RequestMapping(value="/savePro")
     public String savePro(projectinfo pi ,HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         if (pi.getIsuse()==null){
-            pi.setIsuse(0);
+            pi.setIsuse("off");
         }
-        piImpl.savePro(pi);
+        if (pi.getId()==null){
+
+            pi.setCreate_time(getTime.getNowDate(new Date()));
+            System.out.println(getTime.getNowDate(new Date()));
+            pi.setUpdate_time(getTime.getNowDate(new Date()));
+            piImpl.savePro(pi);
+        }else {
+            pi.setUpdate_time(new Date());
+            piImpl.editPro(pi);
+        }
+
         return "content";
     }
 
     @RequestMapping(value="/delPro")
+    @ResponseBody
     public String delPro(int id,HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        piImpl.delProById(id);
+        int num = piImpl.delProById(id);
+
         return "content";
     }
 
 
-    @RequestMapping(value="/getBusinessBySearch")
-    @ResponseBody
-    public String  getBusinessBySearch( int proid,String businessName,HttpServletRequest request, HttpServletResponse response){
-        System.out.println("getBusinessBySearch");
 
-
-
-        String  str="{\n" +
-                "  \"code\": 0\n" +
-                "  ,\"msg\": \"\"\n" +
-                "  ,\"count\": "+22+"\n" +
-                "  ,\"data\": [{\n" +
-                "    \"id\": \"1\"\n" +
-                "    ,\"username\": \"杜甫1111111\"\n" +
-                "    ,\"email\": \"xianxin@layui.com\"\n" +
-                "    ,\"sex\": \"男\"\n" +
-                "    ,\"city\": \"浙江杭州\"\n" +
-                "    ,\"sign\": \"鼠标移动到此处，可以通过点击单元格右侧的下拉图标，查看到被隐藏的全部内容。\"\n" +
-                "    ,\"experience\": \"7\"\n" +
-                "    ,\"ip\": \"192.168.0.8\"\n" +
-                "    ,\"logins\": null\n" +
-                "    ,\"joinTime\": \"2016-10-14\"\n" +
-                "  }\n" +
-                "]\n" +
-                "}";
-        return str;
-    }
 //    public static  void main(String[] args){
 //        /**
 //         * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。

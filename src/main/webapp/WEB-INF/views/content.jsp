@@ -42,9 +42,9 @@
 
 <script type="text/html" id="barDemo">
 
+
+
          <a class="layui-btn layui-btn-xs" lay-event="edit" ><i class="layui-icon">&#xe642;</i>编辑</a>
-
-
          <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"> <i class="layui-icon">&#xe640;</i>删除</a>
 </script>
 
@@ -63,20 +63,50 @@
             elem: '#test'
             ,url:'/pro/getList'
             ,toolbar: '#toolbarDemo' //开启头具栏，并为其绑定左侧模板
-            // ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
-            //     title: '提示'
-            //     ,layEvent: 'LAYTABLE_TIPS'
-            //     ,icon: 'layui-icon-tips'
-            // }]
-            ,title: '用户数据表'
+              ,  height : 480
+            ,title: '服务端集合表'
             ,page: true
             ,cols: [[
                 {type: 'checkbox', fixed: 'left'}
-                ,{field:'id', title:'ID', width:80, fixed: 'left', unresize: true, sort: true}
-                ,{field:'projectname', title:'服务端名称', width:450, edit: 'text', sort: true}
-                ,{field:'isuse', title:'是否启用', width:300, edit: 'text', sort: true}
-                ,{fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+                ,{field:'id', title:'ID', width:80, fixed: 'left',  sort: true}
+                ,{field:'projectname', title:'服务端名称', width:450}
+                ,{field:'isuse', title:'是否启用', width:300}
+                ,{ title:'操作', toolbar: '#barDemo', width:211 }
             ]]
+            ,parseData: function (res) {
+                if(res.count == 0)
+                {
+                    return {
+                        'code': 201, //接口状态
+                        'msg': '暂无数据', //提示文本
+                        'count': 0, //数据长度
+                        'data': [] //数据列表，是直接填充进表格中的数组
+                    }
+                }
+            }
+            ,done: function(res, curr, count){
+                //如果是异步请求数据方式，res即为你接口返回的信息。
+                //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+                console.log(res);
+                //得到当前页码
+                console.log(curr);
+                //得到数据总量
+                console.log(count);
+                $(".layui-table-box").find("[data-field='id']").css("display","none");
+
+                $("[data-field='isuse']").children().each(function(){
+
+                    console.log(this)
+                    if($(this).text()=='1'){
+                        $(this).text("是")
+                    }else if($(this).text()=='0'){
+                        $(this).text("否")
+                    }
+                });
+
+
+                pageCurr=curr;
+            }
             ,id: 'testReload'
         });
 
@@ -132,9 +162,11 @@
             //console.log(obj)
             if(obj.event === 'del'){
                 layer.confirm('真的删除行么', function(index){
-                    location.href='/pro/delPro?id='+data.id
+                   location.href='/pro/delPro?id='+data.id
+                    console.log(index)
                     layer.close(index);
-                });
+                }
+               );
             } else if(obj.event === 'edit'){
                      location.href='/pro/addPro?id='+data.id
 
